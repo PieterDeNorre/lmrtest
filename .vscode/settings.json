@@ -1,0 +1,23 @@
+{
+  "postman.settings.dotenv-detection-notification-visibility": false,
+  "prettier.documentSelectors": [
+    ".prettierrc",
+    "./.prettierrc",
+    "*/.prettierrc",
+    "*/src/.prettierrc",
+    "src/.prettierrc"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": true,
+  "prettier.configPath": "./src/.prettierrc",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
