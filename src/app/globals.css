@@ -2,19 +2,39 @@
 
 @theme {
   --color-blue-dark: #004475;
-  --color-blue: #0C6AAE;
-  --color-blue-light: #2D89CC;
-  --color-yellow-dark: #E1B827;
-  --color-yellow: #FFE200;
-  --grey-light: #E1B827;
-  --color-valid: #17A500;
-  --color-error: #F05535;
+  --color-blue: #0c6aae;
+  --color-blue-light: #2d89cc;
+  --color-yellow-dark: #e1b827;
+  --color-yellow: #ffe200;
+  --grey-light: #e1b827;
+  --color-teal: #49b4aa;
+  --color-pink-dark: #ea516d;
+  --color-valid: #17a500;
+  --color-error: #f05535;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
+}
+
+/* Reset only specific elements instead of all elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body,
+html {
   margin: 0;
+  padding: 0;
 }
 
 html,

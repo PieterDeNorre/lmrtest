@@ -1,22 +1,37 @@
 import { tv } from "tailwind-variants";
 import { headers } from "../tailwind/global";
+import { getQuizData } from "./api/getQuizData";
+import { QuestionProvider } from "@/context/questionContext";
+import { QuizProvider } from "@/context/quizContext";
+import { LevelSelection, QuizStatus } from "@/components";
 
-const classesContainer = tv({
+const classesAppContainer = tv({
   slots: {
-    container: 'absolute h-full w-full bg-blue-dark flex items-center justify-center',
-    intro: headers({ size: 'md', color: 'yellow' }),
+    appContainer:
+      "fixed h-full w-full bg-blue-dark flex items-center justify-center",
+    intro: headers({ size: "md", color: "yellow" }),
+    quizContainer: "max-w-[1194px] max-h-[834px] rounded-lg w-full h-full",
   },
 });
 
-export default function Home() {
+export default async function Home() {
+  const classes = classesAppContainer();
 
-  const classes = classesContainer();
+  // Fetch quiz data on server side
+  const quizResult = await getQuizData();
 
   return (
-    <>
-      <div className={classes.container()}>
-        <h1 className={classes.intro()}>Hello, World!</h1>
-      </div>
-    </>
+    <QuestionProvider
+      initialQuestions={quizResult.success ? quizResult.data : []}
+    >
+      <QuizProvider time_limit_s={60 * 50}>
+        <div className={classes.appContainer()}>
+          <QuizStatus />
+          <div className={classes.quizContainer()}>
+            <LevelSelection />
+          </div>
+        </div>
+      </QuizProvider>
+    </QuestionProvider>
   );
 }

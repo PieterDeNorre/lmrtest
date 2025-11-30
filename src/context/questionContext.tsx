@@ -1,0 +1,76 @@
+"use client";
+
+import { createContext, useContext, ReactNode, useState } from "react";
+
+// Define the answer type
+export interface Answer {
+  answer: string;
+  correct: boolean;
+}
+
+// Define the question type based on your quiz data structure
+export interface Question {
+  question: string;
+  tim_limit_s: number;
+  answers?: Answer[];
+}
+
+// Define the context type
+export interface QuestionContextType {
+  questions: Question[];
+  currentQuestionIndex: number;
+  setCurrentQuestionIndex: (index: number) => void;
+  answers: Record<string | number, string>;
+  setAnswer: (questionId: string | number, answer: string) => void;
+}
+
+// Create the context
+export const QuestionContext = createContext<QuestionContextType | undefined>(
+  undefined
+);
+
+// Custom hook to use the context
+export const useQuestionContext = () => {
+  const context = useContext(QuestionContext);
+  if (context === undefined) {
+    throw new Error(
+      "useQuestionContext must be used within a QuestionProvider"
+    );
+  }
+  return context;
+};
+
+export interface QuestionProviderProps {
+  children: ReactNode;
+  initialQuestions?: Question[];
+}
+
+export const QuestionProvider = ({
+  children,
+  initialQuestions = [],
+}: QuestionProviderProps) => {
+  const [questions] = useState<Question[]>(initialQuestions);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [answers, setAnswers] = useState<Record<string | number, string>>({});
+
+  const setAnswer = (questionId: string | number, answer: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [questionId]: answer,
+    }));
+  };
+
+  const value: QuestionContextType = {
+    questions,
+    currentQuestionIndex,
+    setCurrentQuestionIndex,
+    answers,
+    setAnswer,
+  };
+
+  return (
+    <QuestionContext.Provider value={value}>
+      {children}
+    </QuestionContext.Provider>
+  );
+};
