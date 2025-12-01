@@ -23,7 +23,7 @@ const classesInfoCorner = tv({
 
 export default function InfoCorner() {
   const classes = classesInfoCorner();
-  const { startTimer, pauseTimer } = useQuizContext();
+  const { startTimer } = useQuizContext();
   return (
     <div className={classes.container()}>
       <div className={classes.infoContent()}>

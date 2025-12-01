@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 "use client";
 
 import { useQuestionsContext, Question } from "@/context/questionsContext";
@@ -6,8 +7,10 @@ import { useMemo } from "react";
 
 const classesMapLocations = tv({
   slots: {
-    dot: "absolute w-14 h-14 rounded-full bg-blue-dark text-white cursor-pointer hover:bg-blue-light transition z-10",
+    dot: "absolute w-14 h-14 rounded-full bg-blue-dark text-white cursor-pointer hover:bg-blue-light transition z-10 group",
     icon: "flex items-center justify-center w-full h-full",
+    hover:
+      "p-2 bg-white text-blue-dark rounded-md text-sm font-semibold absolute top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition w-max max-w-xs",
   },
 });
 
@@ -51,6 +54,7 @@ export default function MapLocations() {
               />
             </svg>
           </div>
+          <div className={classes.hover()}>{question.question}</div>
         </button>
       ))}
     </>
