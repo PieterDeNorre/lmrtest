@@ -26,3 +26,11 @@ export const headers = tv({
     },
   },
 });
+
+export const gameContainers = tv({
+  slots: {
+    grid: "grid grid-cols-[1fr_2fr] h-full w-full gap-5",
+    frame:
+      "rounded-lg bg-blue h-full w-full relative overflow-hidden border-16 border-blue",
+  },
+});

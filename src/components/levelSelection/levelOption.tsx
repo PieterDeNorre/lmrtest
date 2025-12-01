@@ -1,6 +1,7 @@
 import { tv } from "tailwind-variants";
 import { headers } from "@/tailwind/global";
 import Image from "next/image";
+import Avatar from "../shared/avatar";
 
 type LevelOptionProps = {
   avatar: string;
@@ -54,15 +55,11 @@ export default function LevelOption({
   return (
     <button className={classes.levelOptionContainer()} onClick={() => action()}>
       {avatar && (
-        <div className={classes.avatar()}>
-          <Image
-            src={`/avatars/avatar_${levelIdx}.png`}
-            alt={`Level ${level} avatar`}
-            width={300}
-            height={300}
-            className={classes.avatarImage()}
-          />
-        </div>
+        <Avatar
+          src={`/avatars/avatar_${levelIdx}.png`}
+          animation={true}
+          alt={`Level ${level} avatar`}
+        />
       )}
       <div className={classes.levelDescription()}>
         <h3 className={classes.level()}>

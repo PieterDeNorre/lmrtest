@@ -8,7 +8,7 @@ export interface Answer {
   correct: boolean;
 }
 
-// Define the question type based on your quiz data structure
+// Define the question type
 export interface Question {
   question: string;
   tim_limit_s: number;
@@ -25,16 +25,16 @@ export interface QuestionContextType {
 }
 
 // Create the context
-export const QuestionContext = createContext<QuestionContextType | undefined>(
+export const QuestionsContext = createContext<QuestionContextType | undefined>(
   undefined
 );
 
 // Custom hook to use the context
-export const useQuestionContext = () => {
-  const context = useContext(QuestionContext);
+export const useQuestionsContext = () => {
+  const context = useContext(QuestionsContext);
   if (context === undefined) {
     throw new Error(
-      "useQuestionContext must be used within a QuestionProvider"
+      "useQuestionsContext must be used within a QuestionsProvider"
     );
   }
   return context;
@@ -69,8 +69,8 @@ export const QuestionProvider = ({
   };
 
   return (
-    <QuestionContext.Provider value={value}>
+    <QuestionsContext.Provider value={value}>
       {children}
-    </QuestionContext.Provider>
+    </QuestionsContext.Provider>
   );
 };

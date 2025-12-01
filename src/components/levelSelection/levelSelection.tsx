@@ -17,7 +17,7 @@ const levelSelectionContainer = tv({
 
 export default function LevelSelection() {
   const classes = levelSelectionContainer();
-  const { setLevel, startTimer } = useQuizContext();
+  const { setLevel, quizStep, setQuizStep } = useQuizContext();
   const levels = [
     {
       avatar: "one",
@@ -37,7 +37,9 @@ export default function LevelSelection() {
       description:
         "Voor de meest ervaren spelers met technische knowhow. Uitgedaagd om hun kennis te testen met steeds moeilijkere puzzels en een minimum aan hulp.",
     },
-  ]; // Placeholder for levels data
+  ];
+  if (quizStep !== 0) return null;
+  // Placeholder for levels data
   return (
     <div className={classes.section()}>
       <h2 className={classes.title()}>Kies je niveau!</h2>
@@ -55,7 +57,7 @@ export default function LevelSelection() {
               levelIdx={index as 0 | 1 | 2}
               action={() => {
                 setLevel(level.level);
-                startTimer();
+                setQuizStep(1);
               }}
             />
           ))}
