@@ -25,6 +25,7 @@ const QuizStatus = () => {
     quizStep,
     pauseTimer,
     setQuizStep,
+    setQuizStarted,
   } = useQuizContext();
 
   return (
@@ -54,6 +55,7 @@ const QuizStatus = () => {
         <Btn
           variant="secondary"
           action={() => {
+            setQuizStarted(false);
             pauseTimer();
           }}
           label="||"

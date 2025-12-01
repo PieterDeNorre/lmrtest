@@ -11,6 +11,7 @@ export interface QuizContextType {
   isTimerRunning: boolean;
   isPaused: boolean;
   quizStep: number;
+  quizStarted: boolean;
   setScore: (score: number) => void;
   setProgress: (progress: number) => void;
   setLevel: (level: string) => void;
@@ -19,6 +20,7 @@ export interface QuizContextType {
   resumeTimer: () => void;
   resetTimer: () => void;
   setQuizStep: (step: number) => void;
+  setQuizStarted: (started: boolean) => void;
 }
 
 export const QuizContext = createContext<QuizContextType | null>(null);
@@ -43,6 +45,7 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
   const [timeLimit, setTimeLimit] = useState(time_limit_s);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
   const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [quizStarted, setQuizStarted] = useState<boolean>(false);
 
   const [quizStep, setQuizStep] = useState<number>(0);
 
@@ -116,6 +119,7 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
         isTimerRunning,
         isPaused,
         quizStep,
+        quizStarted,
         setScore,
         setProgress,
         setLevel,
@@ -124,6 +128,7 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
         resumeTimer,
         resetTimer,
         setQuizStep,
+        setQuizStarted,
       }}
     >
       {children}

@@ -1,21 +1,29 @@
 /* eslint-disable react-hooks/purity */
 "use client";
 
-import { useQuestionsContext, Question } from "@/context/questionsContext";
+import { headers } from "@/tailwind/global";
+import { useQuestionsContext } from "@/context/questionsContext";
 import { tv } from "tailwind-variants";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
+import { useQuizContext } from "@/context/quizContext";
 
 const classesMapLocations = tv({
   slots: {
     dot: "absolute w-14 h-14 rounded-full bg-blue-dark text-white cursor-pointer hover:bg-blue-light transition z-10 group",
-    icon: "flex items-center justify-center w-full h-full",
+    icon: "flex items-center justify-center inset-0",
+    overlay: "rounded-md absolute inset-0 bg-blue-dark/40",
     hover:
       "p-2 bg-white text-blue-dark rounded-md text-sm font-semibold absolute top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition w-max max-w-xs",
+    modal:
+      "rounded-md w-[565px] h-auto absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-blue z-50 py-20",
+    modalText:
+      headers({ size: "6xl", color: "white" }) + " p-10 text-center font-bold",
   },
 });
 
 export default function MapLocations() {
   const { questions } = useQuestionsContext();
+  const { quizStarted } = useQuizContext();
   const classes = classesMapLocations();
 
   // Generate stable positions that don't change on re-renders
@@ -28,6 +36,20 @@ export default function MapLocations() {
       id: question.question + index,
     }));
   }, [questions]); // Only recalculate when questions change
+
+  if (!quizStarted) {
+    return (
+      <>
+        <div className={classes.overlay()} />
+        <div className={classes.modal()}>
+          <p className={classes.modalText()}>
+            Welkom <br />
+            in Kansstad
+          </p>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

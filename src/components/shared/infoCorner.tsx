@@ -23,7 +23,8 @@ const classesInfoCorner = tv({
 
 export default function InfoCorner() {
   const classes = classesInfoCorner();
-  const { startTimer } = useQuizContext();
+  const { startTimer, pauseTimer, setQuizStarted, quizStarted } =
+    useQuizContext();
   return (
     <div className={classes.container()}>
       <div className={classes.infoContent()}>
@@ -54,13 +55,25 @@ export default function InfoCorner() {
             verliezen dus, we gaan meteen aan de slag!
           </p>
 
-          <Btn
-            variant="primary"
-            action={() => {
-              startTimer();
-            }}
-            label="Spel starten"
-          />
+          {!quizStarted ? (
+            <Btn
+              variant="primary"
+              action={() => {
+                startTimer();
+                setQuizStarted(true);
+              }}
+              label="Spel starten"
+            />
+          ) : (
+            <Btn
+              variant="secondary"
+              action={() => {
+                pauseTimer();
+                setQuizStarted(false);
+              }}
+              label="Spel pauzeren"
+            />
+          )}
         </div>
       </div>
       <div className={classes.infoFooter()}>
