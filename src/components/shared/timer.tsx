@@ -12,7 +12,7 @@ type TimerProps = {
 const classesTimer = tv({
   slots: {
     container:
-      "absolute top-2 left-2 bg-blue-light text-white px-4 py-1 rounded-md flex items-center justify-center shadow-blue-dark gap-2",
+      "bg-blue-light text-white px-4 py-1 rounded-md flex items-center justify-center shadow-blue-dark gap-2",
     timer: "font-bold text-center",
   },
 });

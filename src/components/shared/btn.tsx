@@ -17,8 +17,9 @@ const classesBtn = tv({
   slots: {
     container: "pb-[5px]",
     button: [
-      "rounded-md transition-all duration-200 cursor-pointer box-sizing-border",
+      "rounded-md transition-all duration-200 cursor-pointer",
       "px-4 py-3",
+      "border border-transparent", // Prevents size change when borders are added
     ],
     text: [headers({ size: "md" }), "font-bold transition-colors"],
   },

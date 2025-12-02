@@ -1,6 +1,6 @@
 import { headers } from "@/tailwind/global";
 import { tv } from "tailwind-variants";
-import { Btn, Avatar } from "@/components";
+import { Btn, Avatar, Progress } from "@/components";
 import Image from "next/image";
 import Timer from "./timer";
 import { useQuizContext } from "@/context/quizContext";
@@ -11,6 +11,7 @@ const classesInfoCorner = tv({
     infoContent:
       "text-base rounded-md bg-white overflow-hidden flex-grow gap-5",
     header: "aspect-video bg-gray-200 relative",
+    headerOverlay: "absolute bg-blue-darkest/50 w-full h-full left-0 top-0",
     body: "flex flex-col gap-5 p-5 pt-14 justify-center items-center relative",
     avatarLoc: "absolute -top-32",
     title:
@@ -24,7 +25,9 @@ const classesInfoCorner = tv({
 
 export default function InfoCorner() {
   const classes = classesInfoCorner();
-  const { startTimer, setQuizStarted, quizStarted } = useQuizContext();
+  const { startTimer, setQuizStarted, quizStarted, quizStep } =
+    useQuizContext();
+
   return (
     <div className={classes.container()}>
       <div className={classes.infoContent()}>
@@ -35,8 +38,11 @@ export default function InfoCorner() {
             fill
             style={{ objectFit: "cover" }}
           />
-          <div className="absolute bg-blue-darkest/50 w-full h-full left-0 top-0" />
-          <Timer type="quiz" />
+          <div className={classes.headerOverlay()} />
+          <div className="h-auto w-full absolute top-0 flex justify-between items-center p-2 gap-4">
+            <Timer type="quiz" />
+            {quizStep > 1 && <Progress amount={22} className={""} done={1} />}
+          </div>
         </div>
 
         <div className={classes.body()}>
