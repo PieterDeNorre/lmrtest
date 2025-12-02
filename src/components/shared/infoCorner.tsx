@@ -7,7 +7,7 @@ import { useQuizContext } from "@/context/quizContext";
 
 const classesInfoCorner = tv({
   slots: {
-    container: "flex flex-col gap-5 h-full",
+    container: "flex flex-col gap-4 h-full",
     infoContent:
       "text-base rounded-md bg-white overflow-hidden flex-grow gap-5",
     header: "aspect-video bg-gray-200 relative",
@@ -15,6 +15,7 @@ const classesInfoCorner = tv({
     avatarLoc: "absolute -top-32",
     title:
       headers({ size: "2xl", color: "blue" }) + " text-center font-bold p-4",
+    titleLine: "block w-[100px] h-[2px] bg-blue-light mx-auto mt-2",
     text:
       headers({ size: "lg", color: "blue" }) + " text-center font-light p-4",
     infoFooter: "h-auto flex gap-3",
@@ -23,8 +24,7 @@ const classesInfoCorner = tv({
 
 export default function InfoCorner() {
   const classes = classesInfoCorner();
-  const { startTimer, pauseTimer, setQuizStarted, quizStarted } =
-    useQuizContext();
+  const { startTimer, setQuizStarted, quizStarted } = useQuizContext();
   return (
     <div className={classes.container()}>
       <div className={classes.infoContent()}>
@@ -42,20 +42,42 @@ export default function InfoCorner() {
         <div className={classes.body()}>
           <div className={classes.avatarLoc()}>
             <Avatar
-              src={`/avatars/avatar_1.png`}
+              src={`/avatars/avatar_3.png`}
               animation={true}
               alt="Avatar of Kansstad"
             />
           </div>
-          <h2 className={classes.title()}>Welkom in Kansstad</h2>
-          <p className={classes.text()}>
-            We kunnen samen deze oude, ingedommelde stad omturnen tot een
-            bruisende stad van de toekomst. Hoe? Met een beetje visie, een
-            gezonde dosis goesting en een streepje innovatie. Geen tijd te
-            verliezen dus, we gaan meteen aan de slag!
-          </p>
-
           {!quizStarted ? (
+            <>
+              <h2 className={classes.title()}>
+                Welkom in Kansstad
+                <span className={classes.titleLine()} />
+              </h2>
+              <p className={classes.text()}>
+                We kunnen samen deze oude, ingedommelde stad omturnen tot een
+                bruisende stad van de toekomst. Hoe? Met een beetje visie, een
+                gezonde dosis goesting en een streepje innovatie. Geen tijd te
+                verliezen dus, we gaan meteen aan de slag!
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 className={classes.title()}>
+                Selecteer jouw kans
+                <span className={classes.titleLine()} />
+              </h2>
+              <p className={classes.text()}>
+                Ik heb een paar boeiende kansen voor jou gezien in onze buurt.
+                Ik heb ze op de kaart aangeduid.{" "}
+              </p>
+              <p className={classes.text()}>
+                Kijk eens rond en laat me weten welke kans jij met beide handen
+                wilt grijpen.
+              </p>
+            </>
+          )}
+
+          {!quizStarted && (
             <Btn
               variant="primary"
               action={() => {
@@ -63,15 +85,6 @@ export default function InfoCorner() {
                 setQuizStarted(true);
               }}
               label="Spel starten"
-            />
-          ) : (
-            <Btn
-              variant="secondary"
-              action={() => {
-                pauseTimer();
-                setQuizStarted(false);
-              }}
-              label="Spel pauzeren"
             />
           )}
         </div>

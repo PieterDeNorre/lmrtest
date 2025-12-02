@@ -8,6 +8,8 @@
   --color-yellow-dark: #e1b827;
   --color-yellow: #ffe200;
   --color-teal: #49b4aa;
+  --color-grey: #9097a0;
+  --color-grey-light: #f5f5f5;
   --color-pink-dark: #ea516d;
   --color-valid: #17a500;
   --color-error: #f05535;
@@ -17,9 +19,10 @@
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
-  --shadow-yellow-dark: 0 6px 0 0 var(--color-yellow-dark);
-  --shadow-blue-dark: 0 6px 0 0 var(--color-blue-dark);
-  --shadow-blue-darkest: 0 6px 0 0 var(--color-blue-darkest);
+  --shadow-yellow-dark: 0 5px 0 0 var(--color-yellow-dark);
+  --shadow-blue-dark: 0 5px 0 0 var(--color-blue-dark);
+  --shadow-blue-darkest: 0 5px 0 0 var(--color-blue-darkest);
+  --inset-shadow-white: inset -5px -5px 0 0 rgba(255, 255, 255, 0.2);
 }
 
 * {

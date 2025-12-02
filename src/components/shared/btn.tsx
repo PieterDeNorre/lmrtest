@@ -11,9 +11,9 @@ type BtnProps = {
 
 const classesBtn = tv({
   slots: {
-    container: "pb-2",
+    container: "pb-[5px]",
     button: "px-4 py-3 rounded-md transition cursor-pointer group",
-    text: "font-bold ",
+    text: headers({ size: "md" }) + " font-bold",
   },
   variants: {
     variant: {

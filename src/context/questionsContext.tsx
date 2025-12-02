@@ -11,7 +11,7 @@ export interface Answer {
 // Define the question type
 export interface Question {
   question: string;
-  tim_limit_s: number;
+  time_limit_s: number;
   answers?: Answer[];
 }
 

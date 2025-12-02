@@ -4,6 +4,7 @@ import { getQuizData } from "./api/getQuizData";
 import { QuestionProvider } from "@/context/questionsContext";
 import { QuizProvider } from "@/context/quizContext";
 import { LevelSelection, QuizStatus, JobSelection } from "@/components";
+import MultipleChoice from "@/components/MultipleChoice/multipleChoice";
 
 const classesAppContainer = tv({
   slots: {
@@ -30,6 +31,7 @@ export default async function Home() {
           <div className={classes.quizContainer()}>
             <LevelSelection />
             <JobSelection />
+            <MultipleChoice />
           </div>
         </div>
       </QuestionProvider>

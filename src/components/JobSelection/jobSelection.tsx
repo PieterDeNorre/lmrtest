@@ -15,8 +15,6 @@ export default function JobSelection() {
       </div>
       <div className={classes.frame()}>
         <Image src="/images/map.jpg" alt="Jobs" fill className="rounded-md" />
-        {/* <Progress /> */}
-        {/* <Welcome /> */}
         <MapLocations />
       </div>
     </div>
