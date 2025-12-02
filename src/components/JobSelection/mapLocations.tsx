@@ -8,8 +8,8 @@ import { Progress } from "@/components";
 
 const classesMapLocations = tv({
   slots: {
-    progress: "absolute top-4 left-4",
-    dot: "-translate-y-1/2 -translate-x-1/2 absolute w-14 h-14 rounded-full cursor-pointer group grou-hover:z-10",
+    progress: "absolute top-2 left-2",
+    dot: "-translate-y-1/2 -translate-x-1/2 absolute w-14 h-14 rounded-full cursor-pointer group group-hover:z-10",
     icon: "flex items-center justify-center inset-0 w-full h-full bg-blue-dark rounded-full hover:bg-blue-light transition",
     hover:
       "transition-all duration-300 overflow-hidden w-0 h-0 group-hover:w-max group-hover:h-auto p-2 bg-white text-blue-dark rounded-md text-sm font-semibold absolute top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition ",

@@ -3,19 +3,21 @@ import { Question } from "@/context/questionsContext";
 import { tv } from "tailwind-variants";
 import { headers } from "@/tailwind/global";
 import { Btn } from "@/components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { formatTime } from "@/util/time";
 
 const classesQuestionContainer = tv({
   slots: {
     container:
-      "p-6 bg-blue-darkest rounded-md shadow-md h-full flex flex-col gap-5 items-center px-20",
+      "p-6 bg-blue-darkest rounded-md shadow-md h-full flex flex-col gap-5 items-center px-12",
     question:
-      headers({ size: "xl", color: "white" }) + " font-bold  text-center",
-    answersList: "grid grid-cols-2 gap-5 w-full",
-    actions: "flex flex-col gap-2",
+      headers({ size: "xl", color: "white" }) +
+      " font-bold text-center leading-tight",
+    answersList: "grid grid-cols-2 gap-2 lg:gap-y-6 lg:gap-x-7 w-full",
+    actions: "flex flex-col gap-2 w-full px-24 flex-grow justify-center",
     timer:
-      "bg-white text-blue-darkest rounded-full px-4 py-2 flex items-center gap-2 font-bold",
+      headers({ size: "sm", color: "white" }) +
+      " font-bold bg-white text-blue-darkest rounded-full px-2 py-1 flex items-center gap-2",
   },
 });
 
@@ -23,6 +25,19 @@ const QuestionContainer = ({ data }: { data: Question }) => {
   const classes = classesQuestionContainer();
   const [started, setStarted] = useState(false);
   const [timer, setTimer] = useState(data.time_limit_s);
+  const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (started && timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [started, timer]);
 
   return (
     <div className={classes.container()}>
@@ -51,8 +66,16 @@ const QuestionContainer = ({ data }: { data: Question }) => {
               label={answer.answer}
               action={() => {
                 setStarted(true);
+                if (!selectedAnswers.includes(index)) {
+                  setSelectedAnswers([...selectedAnswers, index]);
+                } else {
+                  setSelectedAnswers(
+                    selectedAnswers.filter((i) => i !== index)
+                  );
+                }
               }}
-              active={true}
+              active={started}
+              selected={selectedAnswers.includes(index)}
             />
           ))}
       </div>
@@ -60,11 +83,13 @@ const QuestionContainer = ({ data }: { data: Question }) => {
         <Btn
           variant="primary"
           label="Klaar"
-          action={() => {}}
+          action={() => {
+            setStarted(false);
+          }}
           disabled={!started}
         />
         <Btn
-          variant="primary"
+          variant="tertiary"
           label="Geef me een tip"
           action={() => {}}
           disabled={!started}

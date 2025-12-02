@@ -8,6 +8,7 @@ import { tv } from "tailwind-variants";
 type TimerProps = {
   type: "question" | "quiz";
 };
+
 const classesTimer = tv({
   slots: {
     container:
@@ -15,6 +16,7 @@ const classesTimer = tv({
     timer: "font-bold text-center",
   },
 });
+
 const Timer = ({ type }: TimerProps) => {
   const classes = classesTimer();
 
