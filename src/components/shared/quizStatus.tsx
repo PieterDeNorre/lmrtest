@@ -1,24 +1,23 @@
 "use client";
 
 import { useQuizContext } from "@/context/quizContext";
-import { formatTime } from "@/util/time";
 import { tv } from "tailwind-variants";
 import { Btn } from "@/components";
 
 const ClassesQuizStatus = tv({
   slots: {
     container:
-      "absolute top-4 left-4 bg-white/10 text-white px-6 py-4 rounded-md flex flex gap-10 items-center",
+      "absolute top-4 left-1/2 translate-x-[-50%] [&_*]:whitespace-nowrap bg-white/10 text-white px-6 py-4 rounded-md flex flex gap-10 items-center",
     title: "text-lg font-semibold underline underline-offset-4",
     btnContainer: "flex gap-2",
     btn: "px-3 py-1 bg-blue-dark rounded-md hover:bg-yellow hover:text-blue-dark transition cursor-pointer",
   },
 });
 
+//! Just an overview for development purposes, not part of the final design
 const QuizStatus = () => {
   const classes = ClassesQuizStatus();
   const {
-    timeLimit,
     score,
     progress,
     level,
@@ -35,7 +34,6 @@ const QuizStatus = () => {
         Level: <b>{level}</b>
       </p>
       <p>Quiz Step: {quizStep}</p>
-      <p>Time Limit: {formatTime(timeLimit)}</p>
       <p>Score: {score}</p>
       <p>Progress: {progress}%</p>
       <div className={classes.btnContainer()}>

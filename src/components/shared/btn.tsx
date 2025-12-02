@@ -5,14 +5,16 @@ type BtnProps = {
   children?: React.ReactNode;
   label?: string;
   action?: () => void;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "answer";
   square?: boolean;
+  active?: boolean;
+  disabled?: boolean;
 };
 
 const classesBtn = tv({
   slots: {
     container: "pb-[5px]",
-    button: "px-4 py-3 rounded-md transition cursor-pointer group",
+    button: "px-5 py-4 rounded-md transition cursor-pointer group",
     text: headers({ size: "md" }) + " font-bold",
   },
   variants: {
@@ -27,6 +29,10 @@ const classesBtn = tv({
           "bg-blue-dark hover:bg-blue-darkest shadow-blue-darkest hover:shadow-blue-dark",
         text: "text-white",
       },
+      answer: {
+        button: "bg-blue-lighter ",
+        text: "text-blue-darkest",
+      },
     },
     square: {
       true: {
@@ -37,12 +43,48 @@ const classesBtn = tv({
         button: "w-full",
       },
     },
+    questionActive: {
+      true: {},
+      false: {},
+    },
+    disabled: {
+      true: {
+        button: "opacity-50 cursor-not-allowed pointer-events-none",
+      },
+      false: {},
+    },
   },
-  defaultVariants: {},
+  compoundVariants: [
+    {
+      variant: "answer",
+      questionActive: true,
+      class: {
+        button: "",
+        text: "text-blue-dark",
+      },
+    },
+  ],
+  defaultVariants: {
+    questionActive: false,
+    disabled: false,
+  },
 });
 
-const Btn = ({ children, label, action, variant, square }: BtnProps) => {
-  const classes = classesBtn({ variant, square });
+const Btn = ({
+  children,
+  label,
+  action,
+  variant,
+  square,
+  active = false,
+  disabled = false,
+}: BtnProps) => {
+  const classes = classesBtn({
+    variant,
+    square,
+    questionActive: active,
+    disabled,
+  });
   return (
     <div className={classes.container()}>
       <button className={classes.button()} onClick={() => action && action()}>

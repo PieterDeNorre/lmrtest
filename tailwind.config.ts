@@ -12,6 +12,7 @@ const config: Config = {
         "blue-dark": "var(--blue-dark)",
         blue: "var(--blue)",
         "blue-light": "var(--blue-light)",
+        "blue-lighter": "var(--blue-lighter)",
         "yellow-dark": "var(--yellow-dark)",
         yellow: "var(--yellow)",
         teal: "var(--teal)",

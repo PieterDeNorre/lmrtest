@@ -21,6 +21,8 @@ export interface QuizContextType {
   resetTimer: () => void;
   setQuizStep: (step: number) => void;
   setQuizStarted: (started: boolean) => void;
+  getCurrentTime: () => number;
+  subscribeToTimer: (callback: (time: number) => void) => () => void;
 }
 
 export const QuizContext = createContext<QuizContextType | null>(null);
@@ -51,6 +53,7 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const timeLeftRef = useRef<number>(time_limit_s);
+  const onTimerUpdate = useRef<((time: number) => void) | null>(null);
 
   const startTimer = () => {
     if (isTimerRunning && !isPaused) return; // Prevent multiple timers
@@ -61,12 +64,17 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
 
     timerRef.current = setInterval(() => {
       timeLeftRef.current -= 1;
-      setTimeLimit(timeLeftRef.current);
+
+      // Only call the callback if it exists, don't update state
+      if (onTimerUpdate.current) {
+        onTimerUpdate.current(timeLeftRef.current);
+      }
 
       if (timeLeftRef.current <= 0) {
         clearInterval(timerRef.current!);
         setIsTimerRunning(false);
         timerRef.current = null;
+        setTimeLimit(0); // Only update state when timer ends
       }
     }, 1000);
   };
@@ -85,13 +93,18 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
 
       timerRef.current = setInterval(() => {
         timeLeftRef.current -= 1;
-        setTimeLimit(timeLeftRef.current);
+
+        // Only call the callback if it exists, don't update state
+        if (onTimerUpdate.current) {
+          onTimerUpdate.current(timeLeftRef.current);
+        }
 
         if (timeLeftRef.current <= 0) {
           clearInterval(timerRef.current!);
           setIsTimerRunning(false);
           setIsPaused(false);
           timerRef.current = null;
+          setTimeLimit(0); // Only update state when timer ends
         }
       }, 1000);
     }
@@ -107,6 +120,18 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
     timeLeftRef.current = time_limit_s;
     setIsTimerRunning(false);
     setIsPaused(false);
+  };
+
+  // Get current time without causing re-render
+  const getCurrentTime = () => timeLeftRef.current;
+
+  // Subscribe to timer updates
+  const subscribeToTimer = (callback: (time: number) => void) => {
+    onTimerUpdate.current = callback;
+    // Return unsubscribe function
+    return () => {
+      onTimerUpdate.current = null;
+    };
   };
 
   return (
@@ -129,6 +154,8 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
         resetTimer,
         setQuizStep,
         setQuizStarted,
+        getCurrentTime,
+        subscribeToTimer,
       }}
     >
       {children}
