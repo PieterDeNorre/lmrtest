@@ -11,15 +11,17 @@ type BtnProps = {
   active?: boolean;
   disabled?: boolean;
   selected?: boolean;
+  isCorrect?: boolean;
+  className?: string;
 };
 
 const classesBtn = tv({
   slots: {
     container: "pb-[5px]",
     button: [
-      "rounded-md transition-all duration-200 cursor-pointer",
+      "rounded-md transition-all duration-200 cursor-pointer ",
       "px-4 py-3",
-      "border border-transparent", // Prevents size change when borders are added
+      "border border-transparent",
     ],
     text: [headers({ size: "md" }), "font-bold transition-colors"],
   },
@@ -94,7 +96,7 @@ const classesBtn = tv({
       variant: "answer",
       selected: true,
       class: {
-        button: "bg-blue-light border border-yellow",
+        button: "bg-blue-light border border-green",
         text: "text-white",
       },
     },
@@ -130,6 +132,7 @@ const Btn = ({
   active = false,
   disabled = false,
   selected = false,
+  className,
 }: BtnProps) => {
   const classes = classesBtn({
     variant,
@@ -140,7 +143,7 @@ const Btn = ({
     selected,
   });
   return (
-    <div className={classes.container()}>
+    <div className={classes.container() + (className ? ` ${className}` : "")}>
       <button className={classes.button()} onClick={() => action && action()}>
         {children ? children : <span className={classes.text()}>{label}</span>}
       </button>

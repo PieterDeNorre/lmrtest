@@ -4,6 +4,7 @@ import { Btn, Avatar, Progress } from "@/components";
 import Image from "next/image";
 import Timer from "./timer";
 import { useQuizContext } from "@/context/quizContext";
+import { useQuestionsContext } from "@/context/questionsContext";
 
 const classesInfoCorner = tv({
   slots: {
@@ -12,6 +13,8 @@ const classesInfoCorner = tv({
       "text-base rounded-md bg-white overflow-hidden flex-grow gap-5",
     header: "aspect-video bg-gray-200 relative",
     headerOverlay: "absolute bg-blue-darkest/50 w-full h-full left-0 top-0",
+    headerStatus:
+      "h-auto w-full absolute top-0 flex justify-between items-center p-2 gap-2",
     body: "flex flex-col gap-5 p-5 pt-14 justify-center items-center relative",
     avatarLoc: "absolute -top-32",
     title:
@@ -27,6 +30,7 @@ export default function InfoCorner() {
   const classes = classesInfoCorner();
   const { startTimer, setQuizStarted, quizStarted, quizStep } =
     useQuizContext();
+  const { solvedQuestions, questions } = useQuestionsContext();
 
   return (
     <div className={classes.container()}>
@@ -39,9 +43,15 @@ export default function InfoCorner() {
             style={{ objectFit: "cover" }}
           />
           <div className={classes.headerOverlay()} />
-          <div className="h-auto w-full absolute top-0 flex justify-between items-center p-2 gap-4">
+          <div className={classes.headerStatus()}>
             <Timer type="quiz" />
-            {quizStep > 1 && <Progress amount={22} className={""} done={1} />}
+            {quizStep > 1 && (
+              <Progress
+                amount={questions.length}
+                className={""}
+                done={solvedQuestions.length}
+              />
+            )}
           </div>
         </div>
 
