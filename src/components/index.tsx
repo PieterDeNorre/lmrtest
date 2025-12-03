@@ -5,15 +5,17 @@ export { default as InfoCorner } from "./shared/infoCorner";
 export { default as Avatar } from "./shared/avatar";
 export { default as Timer } from "./shared/timer";
 export { default as Progress } from "./shared/progress";
+export { default as Modal } from "./shared/modal";
+export { default as IconsProvider } from "./shared/IconProvider";
 
 // Level Selection Exports
 export { default as LevelSelection } from "./levelSelection/levelSelection";
 export { default as LevelOption } from "./levelSelection/levelOption";
 
 // Job Selection Exports
-export { default as JobSelection } from "./JobSelection/jobSelection";
-export { default as MapLocations } from "./JobSelection/mapLocations";
+export { default as JobSelection } from "./jobSelection/jobSelection";
+export { default as MapLocations } from "./jobSelection/mapLocations";
 
 // Multiple Choice Exports
-export { default as MultipleChoice } from "./MultipleChoice/multipleChoice";
-export { default as QuestionContainer } from "./MultipleChoice/questionContainer";
+export { default as MultipleChoice } from "./multipleChoice/multipleChoice";
+export { default as QuestionContainer } from "./multipleChoice/questionContainer";

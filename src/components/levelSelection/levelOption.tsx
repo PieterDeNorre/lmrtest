@@ -1,6 +1,5 @@
 import { tv } from "tailwind-variants";
 import { headers } from "@/tailwind/global";
-import Image from "next/image";
 import Avatar from "../shared/avatar";
 
 type LevelOptionProps = {
@@ -51,7 +50,7 @@ export default function LevelOption({
   action,
 }: LevelOptionProps) {
   const classes = levelOptionClasses({ levelIdx });
-  console.log(action);
+
   return (
     <button className={classes.levelOptionContainer()} onClick={() => action()}>
       {avatar && (

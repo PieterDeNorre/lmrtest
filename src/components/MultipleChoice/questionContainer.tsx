@@ -3,12 +3,13 @@
 import { Question, useQuestionsContext } from "@/context/questionsContext";
 import { tv } from "tailwind-variants";
 import { headers } from "@/tailwind/global";
-import { Btn } from "@/components";
+import { Btn, IconsProvider, Modal, Progress } from "@/components";
 import { useEffect, useState } from "react";
 import { formatTime } from "@/util/time";
 import { useQuizContext } from "@/context/quizContext";
+import { MultipleChoiceValidator } from "@/util/mutlipleChoiceValidator";
 
-export type selectedAnswer = {
+export type SelectedAnswer = {
   idx: number;
   answer: boolean;
 };
@@ -26,6 +27,9 @@ const classesQuestionContainer = tv({
       headers({ size: "sm", color: "white" }) +
       " font-bold bg-white text-blue-darkest rounded-full px-2 py-1 flex items-center gap-2",
     answer: "",
+    modalTitle:
+      headers({ size: "xl", color: "blue" }) + " font-bold text-center mb-6",
+    modalText: headers({ size: "sm", color: "blue" }) + " text-center mb-6",
   },
   variants: {
     timerStopped: {
@@ -44,7 +48,9 @@ const classesQuestionContainer = tv({
       false: {},
     },
     wrong: {
-      true: {},
+      true: {
+        answer: "animate-shake",
+      },
       false: {},
     },
   },
@@ -74,14 +80,16 @@ const QuestionContainer = ({ data }: { data: Question }) => {
   const classes = classesQuestionContainer();
   const [started, setStarted] = useState(false);
   const [timer, setTimer] = useState(data.time_limit_s);
-  const [selectedAnswers, setSelectedAnswers] = useState<selectedAnswer[]>([]);
+  const [selectedAnswers, setSelectedAnswers] = useState<SelectedAnswer[]>([]);
   const [validateAnswers, setValidateAnswers] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+
   const { quizStep, setQuizStep, results, setResults } = useQuizContext();
   const { currentQuestionIndex } = useQuestionsContext();
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    if (started && timer > 0) {
+    if (timer > 0) {
       interval = setInterval(() => {
         setTimer((prev) => prev - 1);
       }, 1000);
@@ -89,23 +97,17 @@ const QuestionContainer = ({ data }: { data: Question }) => {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [started, timer]);
+  }, [timer]);
+
+  const valid = MultipleChoiceValidator({
+    answerList: data.answers || [],
+    selectedAnswers,
+  });
 
   return (
     <div className={classes.container()}>
       <div className={classes.timer({ timerStopped: timer === 0 })}>
-        <svg
-          width="15"
-          height="18"
-          viewBox="0 0 15 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14.0827 10.2915C14.0827 8.90348 13.6426 7.58317 12.9316 6.46598H12.9655L13.9473 5.45036C14.1165 5.31494 14.1165 5.04411 13.9473 4.87484L12.9993 3.92692C12.8301 3.75765 12.5592 3.75765 12.4238 3.92692L11.4759 4.87484C10.528 4.09619 9.37695 3.55452 8.12435 3.3514V2.1665H9.07227C9.27539 2.1665 9.47852 1.99723 9.47852 1.76025V0.406087C9.47852 0.202962 9.27539 -0.000163317 9.07227 -0.000163317H5.00977C4.77279 -0.000163317 4.60352 0.202962 4.60352 0.406087V1.76025C4.60352 1.99723 4.77279 2.1665 5.00977 2.1665H5.95768V3.3514C2.57227 3.85921 -0.000651658 6.77067 -0.000651658 10.2915C-0.000651658 14.1847 3.14779 17.3332 7.04102 17.3332C10.9004 17.3332 14.0827 14.1847 14.0827 10.2915ZM8.12435 11.5103C8.12435 11.7472 7.92122 11.9165 7.7181 11.9165H6.36393C6.12695 11.9165 5.95768 11.7472 5.95768 11.5103V6.39827C5.95768 6.1613 6.12695 5.99202 6.36393 5.99202H7.7181C7.92122 5.99202 8.12435 6.1613 8.12435 6.39827V11.5103Z"
-            fill="currentColor"
-          />
-        </svg>
+        <IconsProvider icon="Crono" className="scale-125 w-3 h-3" />
         {formatTime(timer)}
       </div>
       <div className={classes.question()}>{data.question}</div>
@@ -156,6 +158,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
             );
           })}
       </div>
+      {/* Btn Actions */}
       <div className={classes.actions()}>
         {!validateAnswers ? (
           <>
@@ -165,6 +168,16 @@ const QuestionContainer = ({ data }: { data: Question }) => {
               action={() => {
                 setStarted(false);
                 setValidateAnswers(true);
+                const resultsLocal = [...results];
+                if (
+                  !results.some((res) => res.index === currentQuestionIndex)
+                ) {
+                  resultsLocal.push({
+                    index: currentQuestionIndex,
+                    selectedAnswers: selectedAnswers,
+                  });
+                }
+                setResults(resultsLocal);
               }}
               disabled={!started}
             />
@@ -178,15 +191,29 @@ const QuestionContainer = ({ data }: { data: Question }) => {
         ) : (
           <Btn
             variant="primary"
-            label="Volgende vraag"
+            label="doorgaan"
+            action={() => setModalOpen(true)}
+          />
+        )}
+      </div>
+      {/* Modal for level completion */}
+      <Modal open={modalOpen || timer === 0}>
+        <h1 className={classes.modalTitle()}>
+          {valid
+            ? `Level ${currentQuestionIndex + 1} voltooid!`
+            : `Level ${currentQuestionIndex + 1} niet voltooid`}
+        </h1>
+        <Progress bar />
+        <p className={classes.modalText()}>
+          {valid
+            ? "Je hebt dit level succesvol afgerond. Klaar om door te gaan naar het volgende level?"
+            : "Je hebt dit level niet succesvol afgerond. Wil je het opnieuw proberen?"}
+        </p>
+        {valid && (
+          <Btn
+            variant="primary"
+            label="volgende level"
             action={() => {
-              setResults([
-                ...results,
-                {
-                  index: currentQuestionIndex,
-                  selectedAnswers: selectedAnswers,
-                },
-              ]);
               // Reset states for next question
               setStarted(false);
               setTimer(data.time_limit_s);
@@ -196,8 +223,28 @@ const QuestionContainer = ({ data }: { data: Question }) => {
             }}
           />
         )}
-      </div>
+        {!valid && (
+          <Btn
+            variant="primary"
+            label="opnieuw proberen"
+            action={() => {
+              // Reset states for next question
+              const resultsLocal = results.filter(
+                (res) => res.index !== currentQuestionIndex
+              );
+
+              setResults(resultsLocal);
+              setModalOpen(false);
+              setStarted(false);
+              setTimer(data.time_limit_s);
+              setSelectedAnswers([]);
+              setValidateAnswers(false);
+            }}
+          />
+        )}
+      </Modal>
     </div>
   );
 };
+
 export default QuestionContainer;

@@ -22,8 +22,8 @@ const config: Config = {
         error: "var(--error)",
       },
       fontFamily: {
-        sans: ["system-ui", "sans-serif"],
-        mono: ["Consolas", "monospace"],
+        sans: ["FlandersArtSans-Regular", "system-ui", "sans-serif"],
+        mono: ["FlandersArtSans-Regular", "Consolas", "monospace"],
       },
       spacing: {
         "18": "4.5rem",

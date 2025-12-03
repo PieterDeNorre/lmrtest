@@ -1,6 +1,6 @@
 "use client";
 
-import { selectedAnswer } from "@/components/MultipleChoice/questionContainer";
+import { selectedAnswer } from "@/components/multipleChoice/questionContainer";
 import { createContext, useContext, ReactNode, useState, useRef } from "react";
 
 export interface QuizContextType {

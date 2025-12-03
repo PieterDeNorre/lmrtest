@@ -1,10 +1,10 @@
 import { tv } from "tailwind-variants";
 
 export const headers = tv({
-  base: "font-jakarta ",
+  base: "font-sans",
   variants: {
     size: {
-      base: "text-base ",
+      base: "text-base",
       sm: "text-sm ",
       md: "text-md ",
       lg: "text-lg ",
@@ -32,5 +32,27 @@ export const gameContainers = tv({
     grid: "p-5 md:p-0 grid grid-rows-[1fr_2fr] md:grid-cols-[1fr_2fr] h-full w-full gap-5",
     frame:
       "rounded-lg bg-blue h-full w-full relative overflow-hidden border-16 border-blue md:row-span-2 ",
+  },
+});
+
+export const classesNails = tv({
+  slots: {
+    nail: "w-5 h-5 bg-grey rounded-full absolute border-2 border-grey-light inset-shadow-white",
+  },
+  variants: {
+    nail: {
+      topleft: {
+        nail: "top-3 left-3",
+      },
+      topright: {
+        nail: "top-3 right-3",
+      },
+      bottomleft: {
+        nail: "bottom-3 left-3",
+      },
+      bottomright: {
+        nail: "bottom-3 right-3",
+      },
+    },
   },
 });
