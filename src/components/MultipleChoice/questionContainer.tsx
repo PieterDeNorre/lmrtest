@@ -1,11 +1,17 @@
 "use client";
 
-import { Question } from "@/context/questionsContext";
+import { Question, useQuestionsContext } from "@/context/questionsContext";
 import { tv } from "tailwind-variants";
 import { headers } from "@/tailwind/global";
 import { Btn } from "@/components";
 import { useEffect, useState } from "react";
 import { formatTime } from "@/util/time";
+import { useQuizContext } from "@/context/quizContext";
+
+export type selectedAnswer = {
+  idx: number;
+  answer: boolean;
+};
 
 const classesQuestionContainer = tv({
   slots: {
@@ -61,15 +67,6 @@ const classesQuestionContainer = tv({
           "[&_button]:ring-error [&_button]:bg-white [&_span]:text-blue-darkest",
       },
     },
-    {
-      correct: false,
-      validateAnswers: true,
-      wrong: true,
-      class: {
-        answer:
-          "[&_button]:border-2 [&_button]:border-valid [&_button]:border-dashed [&_button]:bg-grey-light [&_span]:text-blue-darkest [&_button]:shake-animation [&_button]:animation-duration-500",
-      },
-    },
   ],
 });
 
@@ -77,10 +74,10 @@ const QuestionContainer = ({ data }: { data: Question }) => {
   const classes = classesQuestionContainer();
   const [started, setStarted] = useState(false);
   const [timer, setTimer] = useState(data.time_limit_s);
-  const [selectedAnswers, setSelectedAnswers] = useState<
-    { idx: number; answer: boolean }[]
-  >([]);
+  const [selectedAnswers, setSelectedAnswers] = useState<selectedAnswer[]>([]);
   const [validateAnswers, setValidateAnswers] = useState(false);
+  const { quizStep, setQuizStep, results, setResults } = useQuizContext();
+  const { currentQuestionIndex } = useQuestionsContext();
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -122,7 +119,6 @@ const QuestionContainer = ({ data }: { data: Question }) => {
 
             // Validation states
             const isCorrectAnswer = selectedAnswer?.answer === true;
-            const isIncorrectAnswer = selectedAnswer?.answer === false;
             const isUntouchedCorrect =
               !isSelected && answer.correct && validateAnswers;
 
@@ -133,7 +129,6 @@ const QuestionContainer = ({ data }: { data: Question }) => {
                   correct: validateAnswers && isSelected && isCorrectAnswer,
                   validateAnswers:
                     validateAnswers && (isSelected || isUntouchedCorrect),
-                  wrong: isUntouchedCorrect,
                 })}
               >
                 <Btn
@@ -162,21 +157,45 @@ const QuestionContainer = ({ data }: { data: Question }) => {
           })}
       </div>
       <div className={classes.actions()}>
-        <Btn
-          variant="primary"
-          label="Klaar"
-          action={() => {
-            setStarted(false);
-            setValidateAnswers(true);
-          }}
-          disabled={!started}
-        />
-        <Btn
-          variant="tertiary"
-          label="Geef me een tip"
-          action={() => {}}
-          disabled={!started}
-        />
+        {!validateAnswers ? (
+          <>
+            <Btn
+              variant="primary"
+              label="Klaar"
+              action={() => {
+                setStarted(false);
+                setValidateAnswers(true);
+              }}
+              disabled={!started}
+            />
+            <Btn
+              variant="tertiary"
+              label="Geef me een tip"
+              action={() => {}}
+              disabled={!started}
+            />
+          </>
+        ) : (
+          <Btn
+            variant="primary"
+            label="Volgende vraag"
+            action={() => {
+              setResults([
+                ...results,
+                {
+                  index: currentQuestionIndex,
+                  selectedAnswers: selectedAnswers,
+                },
+              ]);
+              // Reset states for next question
+              setStarted(false);
+              setTimer(data.time_limit_s);
+              setSelectedAnswers([]);
+              setValidateAnswers(false);
+              setQuizStep(quizStep - 1);
+            }}
+          />
+        )}
       </div>
     </div>
   );

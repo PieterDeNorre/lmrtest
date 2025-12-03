@@ -1,5 +1,6 @@
 "use client";
 
+import { selectedAnswer } from "@/components/MultipleChoice/questionContainer";
 import { createContext, useContext, ReactNode, useState, useRef } from "react";
 
 export interface QuizContextType {
@@ -12,6 +13,7 @@ export interface QuizContextType {
   isPaused: boolean;
   quizStep: number;
   quizStarted: boolean;
+  results: questionResult[];
   setScore: (score: number) => void;
   setProgress: (progress: number) => void;
   setLevel: (level: string) => void;
@@ -23,6 +25,12 @@ export interface QuizContextType {
   setQuizStarted: (started: boolean) => void;
   getCurrentTime: () => number;
   subscribeToTimer: (callback: (time: number) => void) => () => void;
+  setResults: (results: questionResult[]) => void;
+}
+
+export interface questionResult {
+  index: number;
+  selectedAnswers: selectedAnswer[];
 }
 
 export const QuizContext = createContext<QuizContextType | null>(null);
@@ -42,13 +50,15 @@ export interface QuizProviderProps {
 
 export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
   const [score, setScore] = useState<number>(0);
-  const [progress, setProgress] = useState<number>(0);
   const [level, setLevel] = useState<string>("");
+
+  const [results, setResults] = useState<questionResult[]>([]);
+
+  const [progress, setProgress] = useState<number>(0);
   const [timeLimit, setTimeLimit] = useState(time_limit_s);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
   const [isPaused, setIsPaused] = useState<boolean>(false);
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
-
   const [quizStep, setQuizStep] = useState<number>(0);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -145,6 +155,7 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
         isPaused,
         quizStep,
         quizStarted,
+        results,
         setScore,
         setProgress,
         setLevel,
@@ -156,6 +167,7 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
         setQuizStarted,
         getCurrentTime,
         subscribeToTimer,
+        setResults,
       }}
     >
       {children}

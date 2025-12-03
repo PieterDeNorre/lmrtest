@@ -27,7 +27,7 @@ export default async function Home() {
         initialQuestions={quizResult.success ? quizResult.data : []}
       >
         <div className={classes.appContainer()}>
-          <QuizStatus />
+          {/* <QuizStatus /> */}
           <div className={classes.quizContainer()}>
             <LevelSelection />
             <JobSelection />

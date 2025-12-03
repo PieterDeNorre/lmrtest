@@ -28,9 +28,9 @@ const classesInfoCorner = tv({
 
 export default function InfoCorner() {
   const classes = classesInfoCorner();
-  const { startTimer, setQuizStarted, quizStarted, quizStep } =
+  const { startTimer, setQuizStarted, quizStarted, quizStep, results } =
     useQuizContext();
-  const { solvedQuestions, questions } = useQuestionsContext();
+  const { questions } = useQuestionsContext();
 
   return (
     <div className={classes.container()}>
@@ -49,7 +49,7 @@ export default function InfoCorner() {
               <Progress
                 amount={questions.length}
                 className={""}
-                done={solvedQuestions.length}
+                done={results.length}
               />
             )}
           </div>
