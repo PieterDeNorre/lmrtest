@@ -57,7 +57,7 @@ export const QuestionProvider = ({
   initialQuestions = [],
 }: QuestionProviderProps) => {
   const [questions] = useState<Question[]>(initialQuestions);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1);
   const [answers, setAnswers] = useState<Record<string | number, string>>({});
   const [solvedQuestions, setSolvedQuestions] = useState<Solved[]>([]);
 

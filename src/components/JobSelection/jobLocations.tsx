@@ -2,17 +2,18 @@
 import { headers } from "@/tailwind/global";
 import { useQuestionsContext } from "@/context/questionsContext";
 import { tv } from "tailwind-variants";
-import { useMemo } from "react";
 import { useQuizContext } from "@/context/quizContext";
 import { Progress, IconsProvider } from "@/components";
+import { infoCornerQuestion, intro, positions } from "@/mock/flavour";
+import parse from "html-react-parser";
 
-const classesMapLocations = tv({
+const classesJobLocations = tv({
   slots: {
     progress: "absolute top-2 left-2",
     dot: "-translate-y-1/2 -translate-x-1/2 absolute w-14 h-14 rounded-full cursor-pointer group group-hover:z-10",
     icon: "text-white",
     hover:
-      "transition-all duration-300 overflow-hidden w-0 h-0 group-hover:w-max group-hover:h-auto flex flex-col gap-2 p-2 bg-white text-blue-dark rounded-md text-sm font-semibold absolute top-16 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition ",
+      "transition-all duration-300 overflow-hidden w-0 h-0 group-hover:w-[300px] group-hover:h-auto flex flex-col gap-2 p-2 bg-white text-blue-dark rounded-md text-sm font-semibold absolute top-1/2 -right-[320px] -translate-y-1/2 opacity-0 group-hover:opacity-100 transition ",
     level: headers({ size: "lg", color: "blue" }) + " font-bolder",
     pulse:
       "absolute left-1/2 top-1/2 rounded-full group-hover:bg-white group-hover:animate-ping -translate-y-1/2 -translate-x-1/2 -z-10",
@@ -69,23 +70,20 @@ const classesModal = tv({
   },
 });
 
-const MapLocations = () => {
+const JobLocations = () => {
   const { questions, setCurrentQuestionIndex } = useQuestionsContext();
   const { quizStarted, setQuizStep, quizStep, results } = useQuizContext();
 
-  const classes = classesMapLocations();
+  const classes = classesJobLocations();
 
   // Generate stable positions that don't change on re-renders
-  const questionPositions = useMemo(() => {
-    return questions.map((question, index) => ({
-      question,
-      left: Math.random() * 80 + 10,
-      top: Math.random() * 80 + 10,
-      // Use question content as seed for consistency
-      idx: index,
-      done: results.some((res) => res.index === index),
-    }));
-  }, [questions, results]); // Only recalculate when questions or results change
+  const questionPositions = questions.map((question, index) => ({
+    question,
+    left: positions[index].left,
+    top: positions[index].top,
+    idx: index,
+    done: results.some((res) => res.index === index),
+  }));
 
   if (!quizStarted) {
     return <Modal />;
@@ -129,7 +127,9 @@ const MapLocations = () => {
             <div className={classes.pulse({ pulse: "small" })} />
             <div className={classes.pulse({ pulse: "big" })} />
             <div className={classes.hover()}>
-              <span className={classes.level()}>Level - {idx + 1}</span>
+              <span className={classes.level()}>
+                {infoCornerQuestion[idx].title}
+              </span>
               <span>{question.time_limit_s + " seconden"}</span>
             </div>
           </button>
@@ -145,10 +145,7 @@ const Modal = () => {
     <>
       <div className={classes.overlay()} />
       <div className={classes.modal()}>
-        <p className={classes.modalText()}>
-          Welkom <br />
-          in Kansstad
-        </p>
+        <p className={classes.modalText()}>{parse(intro.modal)}</p>
         <div className={classes.nail({ nail: "topleft" })} />
         <div className={classes.nail({ nail: "topright" })} />
         <div className={classes.nail({ nail: "bottomleft" })} />
@@ -158,4 +155,4 @@ const Modal = () => {
   );
 };
 
-export default MapLocations;
+export default JobLocations;

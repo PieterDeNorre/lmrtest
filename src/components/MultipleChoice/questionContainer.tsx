@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { formatTime } from "@/util/time";
 import { useQuizContext } from "@/context/quizContext";
 import { MultipleChoiceValidator } from "@/util/mutlipleChoiceValidator";
+import { btnLablels, modalsText } from "@/mock/flavour";
 
 export type SelectedAnswer = {
   idx: number;
@@ -164,7 +165,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
           <>
             <Btn
               variant="primary"
-              label="Klaar"
+              label={btnLablels.klaar}
               action={() => {
                 setStarted(false);
                 setValidateAnswers(true);
@@ -183,7 +184,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
             />
             <Btn
               variant="tertiary"
-              label="Geef me een tip"
+              label={btnLablels.tip}
               action={() => {}}
               disabled={!started}
             />
@@ -191,7 +192,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
         ) : (
           <Btn
             variant="primary"
-            label="doorgaan"
+            label={btnLablels.door}
             action={() => setModalOpen(true)}
           />
         )}
@@ -199,20 +200,16 @@ const QuestionContainer = ({ data }: { data: Question }) => {
       {/* Modal for level completion */}
       <Modal open={modalOpen || timer === 0}>
         <h1 className={classes.modalTitle()}>
-          {valid
-            ? `Level ${currentQuestionIndex + 1} voltooid!`
-            : `Level ${currentQuestionIndex + 1} niet voltooid`}
+          {valid ? modalsText[0].titel : modalsText[1].titel}
         </h1>
         <Progress bar />
         <p className={classes.modalText()}>
-          {valid
-            ? "Je hebt dit level succesvol afgerond. Klaar om door te gaan naar het volgende level?"
-            : "Je hebt dit level niet succesvol afgerond. Wil je het opnieuw proberen?"}
+          {valid ? modalsText[0].text : modalsText[1].text}
         </p>
         {valid && (
           <Btn
             variant="primary"
-            label="volgende level"
+            label={btnLablels.volgende}
             action={() => {
               // Reset states for next question
               setStarted(false);
@@ -226,7 +223,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
         {!valid && (
           <Btn
             variant="primary"
-            label="opnieuw proberen"
+            label={btnLablels.opnieuw}
             action={() => {
               // Reset states for next question
               const resultsLocal = results.filter(

@@ -4,6 +4,9 @@ import { Btn, Avatar, Progress, IconsProvider } from "@/components";
 import Image from "next/image";
 import Timer from "./timer";
 import { useQuizContext } from "@/context/quizContext";
+import { infoCornerText, infoCornerQuestion, btnLablels } from "@/mock/flavour";
+import parse from "html-react-parser";
+import { useQuestionsContext } from "@/context/questionsContext";
 
 const classesInfoCorner = tv({
   slots: {
@@ -27,8 +30,9 @@ const classesInfoCorner = tv({
 
 export default function InfoCorner() {
   const classes = classesInfoCorner();
-  const { startTimer, setQuizStarted, quizStarted, quizStep } =
+  const { startTimer, setQuizStarted, quizStarted, quizStep, setQuizStep } =
     useQuizContext();
+  const { currentQuestionIndex } = useQuestionsContext();
 
   return (
     <div className={classes.container()}>
@@ -56,33 +60,39 @@ export default function InfoCorner() {
             />
           </div>
 
-          {!quizStarted ? (
+          {!quizStarted && (
             <>
               <h2 className={classes.title()}>
-                Welkom in Kansstad
+                {infoCornerText[0].title}
                 <span className={classes.titleLine()} />
               </h2>
-              <p className={classes.text()}>
-                We kunnen samen deze oude, ingedommelde stad omturnen tot een
-                bruisende stad van de toekomst. Hoe? Met een beetje visie, een
-                gezonde dosis goesting en een streepje innovatie. Geen tijd te
-                verliezen dus, we gaan meteen aan de slag!
-              </p>
+              <div className={classes.text()}>
+                {parse(infoCornerText[0].text)}
+              </div>
             </>
-          ) : (
+          )}
+
+          {quizStarted && quizStep === 1 && (
             <>
               <h2 className={classes.title()}>
-                Selecteer jouw kans
+                {infoCornerText[1].title}
                 <span className={classes.titleLine()} />
               </h2>
-              <p className={classes.text()}>
-                Ik heb een paar boeiende kansen voor jou gezien in onze buurt.
-                Ik heb ze op de kaart aangeduid.{" "}
-              </p>
-              <p className={classes.text()}>
-                Kijk eens rond en laat me weten welke kans jij met beide handen
-                wilt grijpen.
-              </p>
+              <div className={classes.text()}>
+                {parse(infoCornerText[1].text)}
+              </div>
+            </>
+          )}
+
+          {currentQuestionIndex !== -1 && quizStep !== 1 && (
+            <>
+              <h2 className={classes.title()}>
+                {infoCornerQuestion[currentQuestionIndex].title}
+                <span className={classes.titleLine()} />
+              </h2>
+              <div className={classes.text()}>
+                {parse(infoCornerQuestion[currentQuestionIndex].text)}
+              </div>
             </>
           )}
 
@@ -93,7 +103,7 @@ export default function InfoCorner() {
                 startTimer();
                 setQuizStarted(true);
               }}
-              label="Spel starten"
+              label={btnLablels.start}
             />
           )}
         </div>
@@ -108,6 +118,13 @@ export default function InfoCorner() {
         <Btn variant="secondary" action={() => console.log("More info")} square>
           <IconsProvider icon="NoMusic" className="text-white" />
         </Btn>
+        {quizStep !== 1 && (
+          <Btn
+            variant="primary"
+            action={() => setQuizStep(1)}
+            label={btnLablels.kaart}
+          />
+        )}
       </div>
     </div>
   );

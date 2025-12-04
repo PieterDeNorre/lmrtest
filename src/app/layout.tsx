@@ -24,12 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          href="https://db.onlinewebfonts.com/c/c6937315bbd6b6fb4970e29a6c1f348d?family=FlandersArtSans-Regular"
-          rel="stylesheet"
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
