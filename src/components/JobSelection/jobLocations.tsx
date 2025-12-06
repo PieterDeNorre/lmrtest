@@ -14,21 +14,26 @@ import {
 } from "@/mock/flavour";
 import parse from "html-react-parser";
 import { useEffect, useState } from "react";
+import MotionPath from "../shared/airplane";
+import { motion } from "framer-motion";
 
 const classesJobLocations = tv({
   slots: {
     overlay:
       "absolute inset-0 bg-blue-dark/40 z-10 transition-opacity duration-300 opacity-0 z-1 poiner-events-none",
-    progress: "absolute top-2 left-2",
+    progress: "!absolute top-2 left-2 z-10",
     dot: "-translate-y-1/2 -translate-x-1/2 absolute w-14 h-14 rounded-full cursor-pointer z-2 group hover:z-10",
     icon: "text-white",
     hover:
-      "relative transition-all duration-300 w-0 h-0 group-hover:w-[300px] group-hover:h-auto flex flex-col bg-white rounded-md text-sm font-semibold absolute top-1/2 -right-[320px] -translate-y-1/3 opacity-0 group-hover:opacity-100 transition ",
+      "opacity-0 relative transition-all duration-300 w-0 h-0 group-hover:opacity-100 group-hover:w-[300px] group-hover:h-auto flex flex-col bg-white rounded-md text-sm font-semibold absolute top-1/2 -right-[320px] -translate-y-1/3 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none group-hover:pointer-events-auto shadow-lg",
     hoverTriangle:
-      "absolute top-16 -left-3 bg-white w-6 h-6 rounded-sm rotate-45",
-    hoverText: "flex flex-col gap-2 mb-4 p-8 ",
-    title: headers({ size: "xl", color: "blue" }) + " font-bolder text-left",
+      "absolute top-16 -left-3 bg-white w-6 h-6 rounded-sm rotate-45 opacity-0 group-hover:opacity-100",
+    hoverText: "flex flex-col gap-2 mb-4 p-8 opacity-0 group-hover:opacity-100",
+    title:
+      headers({ size: "xl", color: "blue" }) +
+      " font-bolder text-left group-hover:opacity-100 opacity-0",
     text: headers({ size: "lg", color: "blue" }) + " text-left font-light",
+    btn: "opacity-0 group-hover:opacity-100",
     pulse:
       "absolute left-1/2 top-1/2 rounded-full group-hover:bg-white group-hover:animate-ping -translate-y-1/2 -translate-x-1/2 -z-10",
     checkmark:
@@ -117,10 +122,11 @@ const JobLocations = () => {
   return (
     <>
       <Progress className={classes.progress()} />
+      <MotionPath />
       <div className={classes.overlay()} />
       {questionPositions.map(({ question, left, top, idx, done }) => {
         return (
-          <div
+          <motion.div
             key={idx + question.question}
             className={classes.dot({ done })}
             style={{
@@ -132,6 +138,14 @@ const JobLocations = () => {
             }}
             onMouseLeave={() => {
               setHoverActive(false);
+            }}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+              delay: idx * 0.5,
             }}
           >
             <div className={classes.icon({ done })}>
@@ -172,9 +186,10 @@ const JobLocations = () => {
                   setCurrentQuestionIndex(idx);
                 }}
                 notRounded
+                className={classes.btn()}
               />
             </div>
-          </div>
+          </motion.div>
         );
       })}
     </>

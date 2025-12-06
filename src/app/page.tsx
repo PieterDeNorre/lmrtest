@@ -5,6 +5,7 @@ import { QuestionProvider } from "@/context/questionsContext";
 import { QuizProvider } from "@/context/quizContext";
 import { LevelSelection, JobSelection } from "@/components";
 import MultipleChoice from "@/components/multipleChoice/multipleChoice";
+import MotionPath from "@/components/shared/airplane";
 
 const classesAppContainer = tv({
   slots: {
