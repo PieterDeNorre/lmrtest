@@ -1,7 +1,7 @@
 "use client";
 
-import { selectedAnswer } from "@/components/multipleChoice/questionContainer";
 import { createContext, useContext, ReactNode, useState, useRef } from "react";
+import { SelectedAnswer } from "@/components/multipleChoice/questionContainer";
 
 export interface QuizContextType {
   // Define your context properties here
@@ -30,7 +30,7 @@ export interface QuizContextType {
 
 export interface questionResult {
   index: number;
-  selectedAnswers: selectedAnswer[];
+  selectedAnswers: SelectedAnswer[];
 }
 
 export const QuizContext = createContext<QuizContextType | null>(null);

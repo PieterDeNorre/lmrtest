@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { formatTime } from "@/util/time";
 import { useQuizContext } from "@/context/quizContext";
 import { MultipleChoiceValidator } from "@/util/mutlipleChoiceValidator";
-import { btnLablels, modalsText } from "@/mock/flavour";
+import { btnLabels, modalsText } from "@/mock/flavour";
 
 export type SelectedAnswer = {
   idx: number;
@@ -29,7 +29,7 @@ const classesQuestionContainer = tv({
       " font-bold bg-white text-blue-darkest rounded-full px-2 py-1 flex items-center gap-2",
     answer: "",
     modalTitle:
-      headers({ size: "xl", color: "blue" }) + " font-bold text-center mb-6",
+      headers({ size: "3xl", color: "blue" }) + " font-bold text-center mb-6",
     modalText: headers({ size: "sm", color: "blue" }) + " text-center mb-6",
   },
   variants: {
@@ -165,7 +165,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
           <>
             <Btn
               variant="primary"
-              label={btnLablels.klaar}
+              label={btnLabels.klaar}
               action={() => {
                 setStarted(false);
                 setValidateAnswers(true);
@@ -184,7 +184,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
             />
             <Btn
               variant="tertiary"
-              label={btnLablels.tip}
+              label={btnLabels.tip}
               action={() => {}}
               disabled={!started}
             />
@@ -192,7 +192,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
         ) : (
           <Btn
             variant="primary"
-            label={btnLablels.door}
+            label={btnLabels.door}
             action={() => setModalOpen(true)}
           />
         )}
@@ -209,7 +209,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
         {valid && (
           <Btn
             variant="primary"
-            label={btnLablels.volgende}
+            label={btnLabels.volgende}
             action={() => {
               // Reset states for next question
               setStarted(false);
@@ -223,7 +223,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
         {!valid && (
           <Btn
             variant="primary"
-            label={btnLablels.opnieuw}
+            label={btnLabels.opnieuw}
             action={() => {
               // Reset states for next question
               const resultsLocal = results.filter(

@@ -6,7 +6,7 @@ const classesModal = tv({
     overlay:
       "fixed inset-0 bg-blue-darkest/70 flex items-center justify-center z-50 ",
     modal:
-      "relative bg-white rounded-lg p-10 shadow-xl items-center flex flex-col gap-7 w-[372px] h-auto justify-center",
+      "relative bg-white rounded-lg p-10 px-16 shadow-xl items-center flex flex-col gap-7 w-[372px] h-auto justify-center",
     modalText: "text-blue text-center",
     nail: "w-5 h-5 bg-grey rounded-full absolute border-2 border-grey-light inset-shadow-white",
   },

@@ -4,7 +4,7 @@ import { Btn, Avatar, Progress, IconsProvider } from "@/components";
 import Image from "next/image";
 import Timer from "./timer";
 import { useQuizContext } from "@/context/quizContext";
-import { infoCornerText, infoCornerQuestion, btnLablels } from "@/mock/flavour";
+import { infoCornerText, infoCornerQuestion, btnLabels } from "@/mock/flavour";
 import parse from "html-react-parser";
 import { useQuestionsContext } from "@/context/questionsContext";
 
@@ -103,7 +103,7 @@ export default function InfoCorner() {
                 startTimer();
                 setQuizStarted(true);
               }}
-              label={btnLablels.start}
+              label={btnLabels.start}
             />
           )}
         </div>
@@ -122,7 +122,7 @@ export default function InfoCorner() {
           <Btn
             variant="primary"
             action={() => setQuizStep(1)}
-            label={btnLablels.kaart}
+            label={btnLabels.kaart}
           />
         )}
       </div>

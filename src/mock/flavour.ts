@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const levels = [
   {
     avatar: "one",
@@ -58,7 +60,7 @@ export const positions = [
   { left: 50, top: 50 },
 ];
 
-export const btnLablels = {
+export const btnLabels = {
   start: "Start het avontuur",
   door: "doorgaan",
   opnieuw: "Opnieuw proberen",
@@ -66,6 +68,7 @@ export const btnLablels = {
   klaar: "Klaar",
   tip: "Geef me een tip",
   kaart: "naar kaart",
+  ontgrendel: "Ontgrendel deze kans",
 };
 
 export const modalsText = [
@@ -76,5 +79,20 @@ export const modalsText = [
   {
     titel: "Level niet voltooid",
     text: "Helaas, je hebt dit level niet succesvol afgerond. Wil je het opnieuw proberen?",
+  },
+];
+
+export const jobLocationHoverText = [
+  {
+    title: "Pizzeria",
+    text: "Bezorg snel de lekkerste pizza's in Kansstad!",
+  },
+  {
+    title: "Productiehal",
+    text: "Help mee aan de productie van topkwaliteit goederen!",
+  },
+  {
+    title: "Luchthaven",
+    text: "Zorg voor een vlotte werking van de luchthaven!",
   },
 ];

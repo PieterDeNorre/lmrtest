@@ -13,13 +13,14 @@ type BtnProps = {
   selected?: boolean;
   isCorrect?: boolean;
   className?: string;
+  notRounded?: boolean;
 };
 
 const classesBtn = tv({
   slots: {
     container: "pb-[5px]",
     button: [
-      "rounded-md transition-all duration-200 cursor-pointer ",
+      "transition-all duration-200 cursor-pointer ",
       "px-4 py-3",
       "border border-transparent",
     ],
@@ -90,6 +91,14 @@ const classesBtn = tv({
         button: "shadow-none",
       },
     },
+    notRounded: {
+      true: {
+        button: "rounded-t-none rounded-b-md",
+      },
+      false: {
+        button: "rounded-md",
+      },
+    },
   },
   compoundVariants: [
     {
@@ -119,6 +128,7 @@ const classesBtn = tv({
     disabled: false,
     selected: false,
     active: false,
+    notRounded: false,
   },
 });
 
@@ -133,6 +143,7 @@ const Btn = ({
   disabled = false,
   selected = false,
   className,
+  notRounded = false,
 }: BtnProps) => {
   const classes = classesBtn({
     variant,
@@ -141,6 +152,7 @@ const Btn = ({
     active,
     disabled,
     selected,
+    notRounded,
   });
   return (
     <div className={classes.container() + (className ? ` ${className}` : "")}>

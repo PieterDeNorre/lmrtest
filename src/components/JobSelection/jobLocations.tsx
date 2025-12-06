@@ -1,20 +1,34 @@
 /* eslint-disable react-hooks/purity */
+"use client";
+
 import { headers } from "@/tailwind/global";
 import { useQuestionsContext } from "@/context/questionsContext";
 import { tv } from "tailwind-variants";
 import { useQuizContext } from "@/context/quizContext";
-import { Progress, IconsProvider } from "@/components";
-import { infoCornerQuestion, intro, positions } from "@/mock/flavour";
+import { Progress, IconsProvider, Btn } from "@/components";
+import {
+  btnLabels,
+  intro,
+  jobLocationHoverText,
+  positions,
+} from "@/mock/flavour";
 import parse from "html-react-parser";
+import { useEffect, useState } from "react";
 
 const classesJobLocations = tv({
   slots: {
+    overlay:
+      "absolute inset-0 bg-blue-dark/40 z-10 transition-opacity duration-300 opacity-0 z-1 poiner-events-none",
     progress: "absolute top-2 left-2",
-    dot: "-translate-y-1/2 -translate-x-1/2 absolute w-14 h-14 rounded-full cursor-pointer group group-hover:z-10",
+    dot: "-translate-y-1/2 -translate-x-1/2 absolute w-14 h-14 rounded-full cursor-pointer z-2 group hover:z-10",
     icon: "text-white",
     hover:
-      "transition-all duration-300 overflow-hidden w-0 h-0 group-hover:w-[300px] group-hover:h-auto flex flex-col gap-2 p-2 bg-white text-blue-dark rounded-md text-sm font-semibold absolute top-1/2 -right-[320px] -translate-y-1/2 opacity-0 group-hover:opacity-100 transition ",
-    level: headers({ size: "lg", color: "blue" }) + " font-bolder",
+      "relative transition-all duration-300 w-0 h-0 group-hover:w-[300px] group-hover:h-auto flex flex-col bg-white rounded-md text-sm font-semibold absolute top-1/2 -right-[320px] -translate-y-1/3 opacity-0 group-hover:opacity-100 transition ",
+    hoverTriangle:
+      "absolute top-16 -left-3 bg-white w-6 h-6 rounded-sm rotate-45",
+    hoverText: "flex flex-col gap-2 mb-4 p-8 ",
+    title: headers({ size: "xl", color: "blue" }) + " font-bolder text-left",
+    text: headers({ size: "lg", color: "blue" }) + " text-left font-light",
     pulse:
       "absolute left-1/2 top-1/2 rounded-full group-hover:bg-white group-hover:animate-ping -translate-y-1/2 -translate-x-1/2 -z-10",
     checkmark:
@@ -39,6 +53,12 @@ const classesJobLocations = tv({
         dot: "",
         icon: "flex items-center justify-center inset-0 w-full h-full bg-blue-dark rounded-full hover:bg-blue-light transition",
       },
+    },
+    hoverActive: {
+      true: {
+        overlay: "opacity-100 pointer-events-auto",
+      },
+      false: {},
     },
   },
 });
@@ -73,8 +93,9 @@ const classesModal = tv({
 const JobLocations = () => {
   const { questions, setCurrentQuestionIndex } = useQuestionsContext();
   const { quizStarted, setQuizStep, quizStep, results } = useQuizContext();
+  const [hoverActive, setHoverActive] = useState<boolean>(false);
 
-  const classes = classesJobLocations();
+  const classes = classesJobLocations({ hoverActive });
 
   // Generate stable positions that don't change on re-renders
   const questionPositions = questions.map((question, index) => ({
@@ -85,6 +106,10 @@ const JobLocations = () => {
     done: results.some((res) => res.index === index),
   }));
 
+  useEffect(() => {
+    console.log("triggered");
+  }, [hoverActive]);
+
   if (!quizStarted) {
     return <Modal />;
   }
@@ -92,18 +117,21 @@ const JobLocations = () => {
   return (
     <>
       <Progress className={classes.progress()} />
+      <div className={classes.overlay()} />
       {questionPositions.map(({ question, left, top, idx, done }) => {
         return (
-          <button
+          <div
             key={idx + question.question}
             className={classes.dot({ done })}
             style={{
               left: `${left}%`,
               top: `${top}%`,
             }}
-            onClick={() => {
-              setQuizStep(quizStep + 1);
-              setCurrentQuestionIndex(idx);
+            onMouseEnter={() => {
+              setHoverActive(true);
+            }}
+            onMouseLeave={() => {
+              setHoverActive(false);
             }}
           >
             <div className={classes.icon({ done })}>
@@ -127,18 +155,33 @@ const JobLocations = () => {
             <div className={classes.pulse({ pulse: "small" })} />
             <div className={classes.pulse({ pulse: "big" })} />
             <div className={classes.hover()}>
-              <span className={classes.level()}>
-                {infoCornerQuestion[idx].title}
-              </span>
-              <span>{question.time_limit_s + " seconden"}</span>
+              <div className={classes.hoverTriangle()} />
+              <div className={classes.hoverText()}>
+                <span className={classes.title()}>
+                  {jobLocationHoverText[idx].title}
+                </span>
+                <span className={classes.text()}>
+                  {jobLocationHoverText[idx].text}
+                </span>
+              </div>
+              <Btn
+                variant="primary"
+                label={btnLabels.ontgrendel}
+                action={() => {
+                  setQuizStep(quizStep + 1);
+                  setCurrentQuestionIndex(idx);
+                }}
+                notRounded
+              />
             </div>
-          </button>
+          </div>
         );
       })}
     </>
   );
 };
 
+// Welcome modal
 const Modal = () => {
   const classes = classesModal();
   return (
