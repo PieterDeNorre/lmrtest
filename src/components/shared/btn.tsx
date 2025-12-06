@@ -1,4 +1,5 @@
 import { headers } from "@/tailwind/global";
+import { motion } from "framer-motion";
 import { tv } from "tailwind-variants";
 
 type BtnProps = {
@@ -14,6 +15,7 @@ type BtnProps = {
   isCorrect?: boolean;
   className?: string;
   notRounded?: boolean;
+  animate?: boolean;
 };
 
 const classesBtn = tv({
@@ -144,6 +146,7 @@ const Btn = ({
   selected = false,
   className,
   notRounded = false,
+  animate = false,
 }: BtnProps) => {
   const classes = classesBtn({
     variant,
@@ -153,13 +156,18 @@ const Btn = ({
     disabled,
     selected,
     notRounded,
+    animate,
   });
   return (
-    <div className={classes.container() + (className ? ` ${className}` : "")}>
+    <motion.div
+      className={classes.container() + (className ? ` ${className}` : "")}
+      initial={{ scale: 1 }}
+      whileTap={{ scale: animate ? 0.95 : 1 }}
+    >
       <button className={classes.button()} onClick={() => action && action()}>
         {children ? children : <span className={classes.text()}>{label}</span>}
       </button>
-    </div>
+    </motion.div>
   );
 };
 export default Btn;

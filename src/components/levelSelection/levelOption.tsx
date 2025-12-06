@@ -64,9 +64,9 @@ export default function LevelOption({
   return (
     <motion.button
       className={classes.levelOptionContainer()}
-      onClick={() => setTimeout(action, 2000)}
+      onClick={() => setTimeout(action, 1000)}
       initial={{ opacity: 0, scale: 0, rotate: 360 }}
-      animate={{ opacity: 1, scale: 0.9, rotate: -360 }}
+      animate={{ opacity: 1, scale: 1, rotate: -360 }}
       whileHover={{ scale: 1.05 }}
       transition={{
         duration: 0.5,

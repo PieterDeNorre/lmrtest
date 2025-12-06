@@ -104,6 +104,7 @@ export default function InfoCorner() {
                 setQuizStarted(true);
               }}
               label={btnLabels.start}
+              animate
             />
           )}
         </div>
@@ -112,10 +113,23 @@ export default function InfoCorner() {
         <Btn variant="secondary" action={() => console.log("More info")} square>
           <IconsProvider icon="Questionmark" className="text-white" />
         </Btn>
-        <Btn variant="secondary" action={() => console.log("More info")} square>
+        <Btn
+          variant="secondary"
+          action={() => {
+            setQuizStep(0);
+            console.log("More info");
+          }}
+          square
+          animate
+        >
           <IconsProvider icon="ArrowRotate" className="text-white" />
         </Btn>
-        <Btn variant="secondary" action={() => console.log("More info")} square>
+        <Btn
+          variant="secondary"
+          action={() => console.log("More info")}
+          square
+          animate
+        >
           <IconsProvider icon="NoMusic" className="text-white" />
         </Btn>
         {quizStep !== 1 && (
@@ -123,6 +137,7 @@ export default function InfoCorner() {
             variant="primary"
             action={() => setQuizStep(1)}
             label={btnLabels.kaart}
+            animate
           />
         )}
       </div>

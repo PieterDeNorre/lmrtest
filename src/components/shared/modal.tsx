@@ -1,4 +1,5 @@
 import { classesNails } from "@/tailwind/global";
+import { motion } from "framer-motion";
 import { tv } from "tailwind-variants";
 
 const classesModal = tv({
@@ -40,13 +41,18 @@ const Modal = ({
   if (!open) return null;
   return (
     <div className={classes.overlay()}>
-      <div className={classes.modal()}>
+      <motion.div
+        className={classes.modal()}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 160, damping: 20 }}
+      >
         {children}
         <div className={nails.nail({ nail: "topleft" })} />
         <div className={nails.nail({ nail: "topright" })} />
         <div className={nails.nail({ nail: "bottomleft" })} />
         <div className={nails.nail({ nail: "bottomright" })} />
-      </div>
+      </motion.div>
     </div>
   );
 };

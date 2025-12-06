@@ -2,6 +2,7 @@ import { useQuestionsContext } from "@/context/questionsContext";
 import { useQuizContext } from "@/context/quizContext";
 import { tv } from "tailwind-variants";
 import IconsProvider from "./IconProvider";
+import { motion } from "framer-motion";
 
 const classesProgress = tv({
   slots: {
@@ -58,7 +59,12 @@ const Progress = ({
   }
 
   return (
-    <div className={classes.container() + " " + className}>
+    <motion.div
+      className={classes.container() + " " + className}
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ type: "spring", stiffness: 160, damping: 20 }}
+    >
       <div className={classes.progressBar()}>
         <div
           className={classes.progress()}
@@ -81,7 +87,7 @@ const Progress = ({
         {results.length} / {questions.length}
       </div>
       <IconsProvider icon="Case" className="text-white scale-150" />
-    </div>
+    </motion.div>
   );
 };
 export default Progress;

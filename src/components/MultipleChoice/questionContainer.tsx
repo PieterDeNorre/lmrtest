@@ -9,6 +9,7 @@ import { formatTime } from "@/util/time";
 import { useQuizContext } from "@/context/quizContext";
 import { MultipleChoiceValidator } from "@/util/mutlipleChoiceValidator";
 import { btnLabels, modalsText } from "@/mock/flavour";
+import { motion } from "framer-motion";
 
 export type SelectedAnswer = {
   idx: number;
@@ -126,13 +127,21 @@ const QuestionContainer = ({ data }: { data: Question }) => {
               !isSelected && answer.correct && validateAnswers;
 
             return (
-              <div
+              <motion.div
                 key={index}
                 className={classes.answer({
                   correct: validateAnswers && isSelected && isCorrectAnswer,
                   validateAnswers:
                     validateAnswers && (isSelected || isUntouchedCorrect),
                 })}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 160,
+                  damping: 20,
+                  delay: index * 0.15,
+                }}
               >
                 <Btn
                   variant="answer"
@@ -155,7 +164,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
                   selected={isSelected}
                   className={validateAnswers ? "pointer-events-none" : ""}
                 />
-              </div>
+              </motion.div>
             );
           })}
       </div>
@@ -163,38 +172,63 @@ const QuestionContainer = ({ data }: { data: Question }) => {
       <div className={classes.actions()}>
         {!validateAnswers ? (
           <>
-            <Btn
-              variant="primary"
-              label={btnLabels.klaar}
-              action={() => {
-                setStarted(false);
-                setValidateAnswers(true);
-                const resultsLocal = [...results];
-                if (
-                  !results.some((res) => res.index === currentQuestionIndex)
-                ) {
-                  resultsLocal.push({
-                    index: currentQuestionIndex,
-                    selectedAnswers: selectedAnswers,
-                  });
-                }
-                setResults(resultsLocal);
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 160, damping: 20 }}
+            >
+              <Btn
+                variant="primary"
+                label={btnLabels.klaar}
+                action={() => {
+                  setStarted(false);
+                  setValidateAnswers(true);
+                  const resultsLocal = [...results];
+                  if (
+                    !results.some((res) => res.index === currentQuestionIndex)
+                  ) {
+                    resultsLocal.push({
+                      index: currentQuestionIndex,
+                      selectedAnswers: selectedAnswers,
+                    });
+                  }
+                  setResults(resultsLocal);
+                }}
+                disabled={!started}
+                animate
+              />
+            </motion.div>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 160,
+                damping: 20,
+                delay: 0.15,
               }}
-              disabled={!started}
-            />
-            <Btn
-              variant="tertiary"
-              label={btnLabels.tip}
-              action={() => {}}
-              disabled={!started}
-            />
+            >
+              <Btn
+                variant="tertiary"
+                label={btnLabels.tip}
+                action={() => {}}
+                disabled={!started}
+                animate
+              />
+            </motion.div>
           </>
         ) : (
-          <Btn
-            variant="primary"
-            label={btnLabels.door}
-            action={() => setModalOpen(true)}
-          />
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 160, damping: 20 }}
+          >
+            <Btn
+              variant="primary"
+              label={btnLabels.door}
+              action={() => setModalOpen(true)}
+            />
+          </motion.div>
         )}
       </div>
       {/* Modal for level completion */}
@@ -218,6 +252,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
               setValidateAnswers(false);
               setQuizStep(quizStep - 1);
             }}
+            animate
           />
         )}
         {!valid && (
@@ -237,6 +272,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
               setSelectedAnswers([]);
               setValidateAnswers(false);
             }}
+            animate
           />
         )}
       </Modal>

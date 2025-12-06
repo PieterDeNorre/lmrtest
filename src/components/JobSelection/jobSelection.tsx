@@ -3,6 +3,7 @@ import { useQuizContext } from "@/context/quizContext";
 import { gameContainers } from "../../tailwind/global";
 import Image from "next/image";
 import { JobLocations, InfoCorner } from "@/components";
+import { motion } from "framer-motion";
 
 export default function JobSelection() {
   const { quizStep } = useQuizContext();
@@ -10,13 +11,23 @@ export default function JobSelection() {
   const classes = gameContainers();
   return (
     <div className={classes.grid()}>
-      <div className={classes.frame()}>
+      <motion.div
+        className={classes.frame()}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 160, damping: 20 }}
+      >
         <InfoCorner />
-      </div>
-      <div className={classes.frame()}>
+      </motion.div>
+      <motion.div
+        className={classes.frame()}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 160, damping: 20 }}
+      >
         <Image src="/images/map.jpg" alt="Jobs" fill className="rounded-md" />
         <JobLocations />
-      </div>
+      </motion.div>
     </div>
   );
 }

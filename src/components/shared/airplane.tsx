@@ -38,11 +38,12 @@ export default function MotionPath() {
         animate={{ offsetDistance: "100%", scale: 1 }}
         transition={transition}
       >
-        <Airplane className="absolute rotate-110 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-50" />
+        <Airplane className="absolute rotate-117 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-50" />
       </motion.div>
     </div>
   );
 }
+
 const Airplane = ({ className }: { className?: string }) => {
   return (
     <svg
@@ -148,8 +149,6 @@ const Airplane = ({ className }: { className?: string }) => {
 };
 
 const box: React.CSSProperties = {
-  width: 10,
-  height: 10,
   position: "absolute",
   top: 0,
   left: 0,

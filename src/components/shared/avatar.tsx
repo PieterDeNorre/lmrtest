@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { tv } from "tailwind-variants";
 
@@ -28,7 +29,12 @@ const classesAvatar = tv({
 const Avatar = ({ src, animation, alt }: AvatarProps) => {
   const classes = classesAvatar({ animation: animation });
   return (
-    <div className={classes.avatar()}>
+    <motion.div
+      className={classes.avatar()}
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ type: "spring", stiffness: 160, damping: 20 }}
+    >
       <Image
         src={src}
         alt={alt}
@@ -36,7 +42,7 @@ const Avatar = ({ src, animation, alt }: AvatarProps) => {
         height={300}
         className={classes.avatarImage()}
       />
-    </div>
+    </motion.div>
   );
 };
 
