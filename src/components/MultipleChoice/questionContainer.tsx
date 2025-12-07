@@ -240,11 +240,19 @@ const QuestionContainer = ({
       {/* Modal for level completion */}
       <Modal open={modalOpen || timer === 0}>
         <h1 className={classes.modalTitle()}>
-          {valid ? modalsText[0].titel : modalsText[1].titel}
+          {validation && valid
+            ? modalsText[0].titel
+            : !validation
+            ? modalsText[0].titel
+            : modalsText[1].titel}
         </h1>
         <Progress bar />
         <p className={classes.modalText()}>
-          {valid ? modalsText[0].text : modalsText[1].text}
+          {validation && valid
+            ? modalsText[0].text
+            : !validation
+            ? modalsText[0].text
+            : modalsText[1].text}
         </p>
 
         {validation && valid && results.length < questions.length && (

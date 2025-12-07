@@ -5,7 +5,8 @@ import { IconsProvider, LevelOption } from "@/components";
 import { useQuizContext } from "@/context/quizContext";
 import { levels, intro } from "@/mock/flavour";
 import parse from "html-react-parser";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const levelSelectionContainer = tv({
   slots: {
@@ -18,16 +19,19 @@ const levelSelectionContainer = tv({
     intro: [
       headers({ size: "base", color: "white" }) + " text-center w-[562px]",
     ],
-    levelList: ["flex flex gap-10"],
-    logo: ["text-white object-contain "],
+    levelList: ["flex flex gap-10 h-auto transition-height duration-300"],
+    logo: ["text-white object-contain"],
   },
 });
 
 export default function LevelSelection() {
+  const [isVisible, setVisible] = useState(true);
   const classes = levelSelectionContainer();
+
   const { setLevel, quizStep, setQuizStep } = useQuizContext();
 
   if (quizStep !== 0) return null;
+
   // Placeholder for levels data
   return (
     <div className={classes.section()}>
@@ -57,29 +61,42 @@ export default function LevelSelection() {
       >
         {parse(intro.description)}
       </motion.p>
-      <motion.div
-        className={classes.levelList()}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0, 0.2, 1.01],
-          damping: 10,
-          stiffness: 100,
-        }}
-      >
-        {levels &&
-          levels.map((level, index) => (
-            <LevelOption
-              {...level}
-              key={level.level + `-${index}`}
-              levelIdx={index as 0 | 1 | 2}
-              action={() => {
-                setLevel(level.level);
-                setQuizStep(1);
-              }}
-            />
-          ))}
-      </motion.div>
+      <div className={classes.levelList()}>
+        <motion.div
+          className={classes.levelList()}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0, 0.2, 1.01],
+            damping: 10,
+            stiffness: 100,
+          }}
+        >
+          <AnimatePresence>
+            {isVisible &&
+              levels &&
+              levels.map((level, index) => (
+                <motion.div
+                  onTap={() => setVisible(!isVisible)}
+                  key={level.level + `-wrapper-${index}`}
+                  initial={{ opacity: 0, scale: 0.75 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                >
+                  <LevelOption
+                    {...level}
+                    levelIdx={index as 0 | 1 | 2}
+                    action={() => {
+                      setLevel(level.level);
+                      setQuizStep(1);
+                      setVisible(true);
+                    }}
+                  />
+                </motion.div>
+              ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
       <motion.div
         className={classes.logo()}
         initial={{ opacity: 0, scale: 0 }}

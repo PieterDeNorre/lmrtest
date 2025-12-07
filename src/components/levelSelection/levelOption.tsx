@@ -14,7 +14,7 @@ type LevelOptionProps = {
 const levelOptionClasses = tv({
   slots: {
     levelOptionContainer: [
-      "relative flex flex-col items-center rounded-lg max-w-[292px]",
+      "relative flex flex-col items-center rounded-lg max-w-[292px] h-full",
       " flex-grow cursor-pointer transition-transform duration-300 group",
     ],
     avatar: [
