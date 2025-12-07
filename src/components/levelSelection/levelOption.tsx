@@ -67,7 +67,6 @@ export default function LevelOption({
       onClick={() => setTimeout(action, 1000)}
       initial={{ opacity: 0, scale: 0, rotate: 360 }}
       animate={{ opacity: 1, scale: 1, rotate: -360 }}
-      whileHover={{ scale: 1.05 }}
       transition={{
         duration: 0.5,
         delay: 0.1 * levelIdx,

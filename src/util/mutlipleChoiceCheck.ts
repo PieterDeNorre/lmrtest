@@ -1,6 +1,12 @@
 import { SelectedAnswer } from "@/components/multipleChoice/questionContainer";
 import { Answer } from "@/context/questionsContext";
 
+type ValidationResult = {
+  score: number;
+  percentage: number;
+  amountQuestions: number;
+};
+
 const MultipleChoiceValidator = ({
   answerList,
   selectedAnswers,
@@ -28,4 +34,25 @@ const MultipleChoiceValidator = ({
   return true;
 };
 
-export { MultipleChoiceValidator };
+const MultipleChoiceScore = ({
+  answerList,
+  selectedAnswers,
+}: {
+  answerList: Answer[];
+  selectedAnswers: SelectedAnswer[];
+}): ValidationResult => {
+  let score = answerList.length;
+  answerList.map((answer, idx) => {
+    if (!answer.correct && selectedAnswers.find((sel) => sel.idx === idx))
+      score = score - 1;
+    if (answer.correct && !selectedAnswers.find((sel) => sel.idx === idx))
+      score = score - 1;
+  });
+  return {
+    score,
+    percentage: Math.max(0, Math.round((score / answerList.length) * 100)),
+    amountQuestions: answerList.length,
+  };
+};
+
+export { MultipleChoiceValidator, MultipleChoiceScore };

@@ -5,7 +5,7 @@ import { headers } from "@/tailwind/global";
 import { useQuestionsContext } from "@/context/questionsContext";
 import { tv } from "tailwind-variants";
 import { useQuizContext } from "@/context/quizContext";
-import { Progress, IconsProvider, Btn } from "@/components";
+import { Progress, IconsProvider, Btn, Aeroplane } from "@/components";
 import {
   btnLabels,
   intro,
@@ -14,7 +14,6 @@ import {
 } from "@/mock/flavour";
 import parse from "html-react-parser";
 import { useEffect, useState } from "react";
-import MotionPath from "../shared/airplane";
 import { motion } from "framer-motion";
 
 const classesJobLocations = tv({
@@ -29,8 +28,11 @@ const classesJobLocations = tv({
       " w-14 h-14 rounded-full cursor-pointer z-2 group hover:z-10",
     ],
     icon: "text-white",
-    hover:
-      "opacity-0 relative transition-all duration-300 w-0 h-0 group-hover:opacity-100 group-hover:w-[300px] group-hover:h-auto flex flex-col bg-white rounded-md text-sm font-semibold absolute top-1/2 -right-[320px] -translate-y-1/3 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none group-hover:pointer-events-auto shadow-lg",
+    hover: [
+      "opacity-0 relative transition-all duration-300 w-0 h-0 group-hover:opacity-100 group-hover:w-[300px] group-hover:h-auto",
+      "flex flex-col bg-white rounded-md text-sm font-semibold absolute top-1/2 -right-[320px] -translate-y-1/3 opacity-0 group-hover:opacity-100",
+      "transition duration-300 pointer-events-none group-hover:pointer-events-auto shadow-lg",
+    ],
     hoverTriangle:
       "absolute top-16 -left-3 bg-white w-6 h-6 rounded-sm rotate-45 opacity-0 group-hover:opacity-100",
     hoverText: "flex flex-col gap-2 mb-4 p-8 opacity-0 group-hover:opacity-100",
@@ -116,9 +118,7 @@ const JobLocations = () => {
     done: results.some((res) => res.index === index),
   }));
 
-  useEffect(() => {
-    console.log("triggered");
-  }, [hoverActive]);
+  useEffect(() => {}, [hoverActive]);
 
   if (!quizStarted) {
     return <Modal />;
@@ -127,7 +127,7 @@ const JobLocations = () => {
   return (
     <>
       <Progress className={classes.progress()} />
-      <MotionPath />
+      <Aeroplane />
       <div className={classes.overlay()} />
       {questionPositions.map(({ question, left, top, idx, done }) => {
         return (

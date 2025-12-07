@@ -3,9 +3,8 @@ import { headers } from "../tailwind/global";
 import { getQuizData } from "./api/getQuizData";
 import { QuestionProvider } from "@/context/questionsContext";
 import { QuizProvider } from "@/context/quizContext";
-import { LevelSelection, JobSelection } from "@/components";
+import { LevelSelection, JobSelection, Overview } from "@/components";
 import MultipleChoice from "@/components/multipleChoice/multipleChoice";
-import MotionPath from "@/components/shared/airplane";
 
 const classesAppContainer = tv({
   slots: {
@@ -28,11 +27,11 @@ export default async function Home() {
         initialQuestions={quizResult.success ? quizResult.data : []}
       >
         <div className={classes.appContainer()}>
-          {/* <QuizStatus /> */}
           <div className={classes.quizContainer()}>
             <LevelSelection />
             <JobSelection />
             <MultipleChoice />
+            <Overview />
           </div>
         </div>
       </QuestionProvider>

@@ -7,7 +7,7 @@ import { Btn, IconsProvider, Modal, Progress } from "@/components";
 import { useEffect, useState } from "react";
 import { formatTime } from "@/util/time";
 import { useQuizContext } from "@/context/quizContext";
-import { MultipleChoiceValidator } from "@/util/mutlipleChoiceValidator";
+import { MultipleChoiceValidator } from "@/util/mutlipleChoiceCheck";
 import { btnLabels, modalsText } from "@/mock/flavour";
 import { motion } from "framer-motion";
 
@@ -78,7 +78,13 @@ const classesQuestionContainer = tv({
   ],
 });
 
-const QuestionContainer = ({ data }: { data: Question }) => {
+const QuestionContainer = ({
+  data,
+  validation = false,
+}: {
+  data: Question;
+  validation?: boolean;
+}) => {
   const classes = classesQuestionContainer();
   const [started, setStarted] = useState(false);
   const [timer, setTimer] = useState(data.time_limit_s);
@@ -87,7 +93,7 @@ const QuestionContainer = ({ data }: { data: Question }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { quizStep, setQuizStep, results, setResults } = useQuizContext();
-  const { currentQuestionIndex } = useQuestionsContext();
+  const { currentQuestionIndex, questions } = useQuestionsContext();
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -240,7 +246,8 @@ const QuestionContainer = ({ data }: { data: Question }) => {
         <p className={classes.modalText()}>
           {valid ? modalsText[0].text : modalsText[1].text}
         </p>
-        {valid && (
+
+        {validation && valid && results.length < questions.length && (
           <Btn
             variant="primary"
             label={btnLabels.volgende}
@@ -255,7 +262,22 @@ const QuestionContainer = ({ data }: { data: Question }) => {
             animate
           />
         )}
-        {!valid && (
+        {validation && valid && questions.length === results.length && (
+          <Btn
+            variant="primary"
+            label={btnLabels.resultaat}
+            action={() => {
+              // Reset states for next question
+              setStarted(false);
+              setTimer(data.time_limit_s);
+              setSelectedAnswers([]);
+              setValidateAnswers(false);
+              setQuizStep(quizStep + 1);
+            }}
+            animate
+          />
+        )}
+        {validation && !valid && (
           <Btn
             variant="primary"
             label={btnLabels.opnieuw}
@@ -271,6 +293,36 @@ const QuestionContainer = ({ data }: { data: Question }) => {
               setTimer(data.time_limit_s);
               setSelectedAnswers([]);
               setValidateAnswers(false);
+            }}
+            animate
+          />
+        )}
+        {!validation && results.length < questions.length && (
+          <Btn
+            variant="primary"
+            label={btnLabels.volgende}
+            action={() => {
+              // Reset states for next question
+              setStarted(false);
+              setTimer(data.time_limit_s);
+              setSelectedAnswers([]);
+              setValidateAnswers(false);
+              setQuizStep(quizStep - 1);
+            }}
+            animate
+          />
+        )}
+        {!validation && questions.length === results.length && (
+          <Btn
+            variant="primary"
+            label={btnLabels.resultaat}
+            action={() => {
+              // Reset states for next question
+              setStarted(false);
+              setTimer(data.time_limit_s);
+              setSelectedAnswers([]);
+              setValidateAnswers(false);
+              setQuizStep(quizStep + 1);
             }}
             animate
           />

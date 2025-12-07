@@ -1,5 +1,6 @@
 import { headers } from "@/tailwind/global";
 import { motion } from "framer-motion";
+import { circle } from "framer-motion/client";
 import { tv } from "tailwind-variants";
 
 type BtnProps = {
@@ -16,6 +17,7 @@ type BtnProps = {
   className?: string;
   notRounded?: boolean;
   animate?: boolean;
+  circle?: boolean;
 };
 
 const classesBtn = tv({
@@ -101,6 +103,11 @@ const classesBtn = tv({
         button: "rounded-md",
       },
     },
+    circle: {
+      true: {
+        button: "rounded-full h-12 w-12",
+      },
+    },
   },
   compoundVariants: [
     {
@@ -147,6 +154,7 @@ const Btn = ({
   className,
   notRounded = false,
   animate = false,
+  circle = false,
 }: BtnProps) => {
   const classes = classesBtn({
     variant,
@@ -156,7 +164,7 @@ const Btn = ({
     disabled,
     selected,
     notRounded,
-    animate,
+    circle,
   });
   return (
     <motion.div

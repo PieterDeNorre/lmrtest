@@ -18,7 +18,10 @@ export default function MultipleChoice() {
         <InfoCorner />
       </div>
       <div className={classes.frame()}>
-        <QuestionContainer data={questions[currentQuestionIndex]} />
+        <QuestionContainer
+          data={questions[currentQuestionIndex]}
+          validation={false}
+        />
       </div>
     </div>
   );

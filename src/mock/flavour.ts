@@ -1,5 +1,3 @@
-import { title } from "process";
-
 export const levels = [
   {
     avatar: "one",
@@ -43,14 +41,17 @@ export const infoCornerQuestion = [
   {
     title: "Pizzeria",
     text: "<p>Mamma mia, pizza pronto porfavor</p>",
+    image: "/results/result_0.jpg",
   },
   {
     title: "Productiehal",
     text: "<p>Alles onder controle... ? </p>",
+    image: "/results/result_1.jpg",
   },
   {
     title: "Luchthaven",
     text: "<p>Ik heb een paar boeiende kansen voor jou gezien in onze buurt. Ik heb ze op de kaart aangeduid.</p><p>Kijk eens rond en laat me weten welke kans jij met beide handen wilt grijpen.</p>",
+    image: "/results/result_2.jpg",
   },
 ];
 
@@ -69,6 +70,7 @@ export const btnLabels = {
   tip: "Geef me een tip",
   kaart: "naar kaart",
   ontgrendel: "Ontgrendel deze kans",
+  resultaat: "Bekijk je resultaat",
 };
 
 export const modalsText = [
@@ -94,5 +96,12 @@ export const jobLocationHoverText = [
   {
     title: "Luchthaven",
     text: "Zorg voor een vlotte werking van de luchthaven!",
+  },
+];
+
+export const overview = [
+  {
+    title: "Je hebt alle kansen gegrepen",
+    text: "Je hebt alle beroepen ontgrendeld, hierbij hoort een rapport!",
   },
 ];

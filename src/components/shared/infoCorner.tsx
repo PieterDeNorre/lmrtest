@@ -110,14 +110,13 @@ export default function InfoCorner() {
         </div>
       </div>
       <div className={classes.infoFooter()}>
-        <Btn variant="secondary" action={() => console.log("More info")} square>
+        <Btn variant="secondary" action={() => setQuizStep(3)} square>
           <IconsProvider icon="Questionmark" className="text-white" />
         </Btn>
         <Btn
           variant="secondary"
           action={() => {
             setQuizStep(0);
-            console.log("More info");
           }}
           square
           animate

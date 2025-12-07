@@ -7,6 +7,8 @@ export { default as Timer } from "./shared/timer";
 export { default as Progress } from "./shared/progress";
 export { default as Modal } from "./shared/modal";
 export { default as IconsProvider } from "./shared/IconProvider";
+export { default as Overview } from "./shared/overview";
+export { default as Aeroplane } from "./shared/airplane";
 
 // Level Selection Exports
 export { default as LevelSelection } from "./levelSelection/levelSelection";

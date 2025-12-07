@@ -8,7 +8,7 @@ const transition: Transition = {
   ease: "linear",
 };
 
-export default function MotionPath() {
+export default function Aeroplane() {
   return (
     <div
       style={{ position: "relative" }}
