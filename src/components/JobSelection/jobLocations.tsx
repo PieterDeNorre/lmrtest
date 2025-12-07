@@ -5,7 +5,7 @@ import { headers } from "@/tailwind/global";
 import { useQuestionsContext } from "@/context/questionsContext";
 import { tv } from "tailwind-variants";
 import { useQuizContext } from "@/context/quizContext";
-import { Progress, IconsProvider, Btn, Aeroplane } from "@/components";
+import { Progress, IconsProvider, Btn, Aeroplane, Vehicle } from "@/components";
 import {
   btnLabels,
   intro,
@@ -127,6 +127,7 @@ const JobLocations = () => {
   return (
     <>
       <Progress className={classes.progress()} />
+      <Vehicle />
       <Aeroplane />
       <div className={classes.overlay()} />
       {questionPositions.map(({ question, left, top, idx, done }) => {

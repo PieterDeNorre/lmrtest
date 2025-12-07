@@ -31,7 +31,7 @@ export const gameContainers = tv({
   slots: {
     grid: "p-5 xl:p-0 grid grid-rows-[1fr_2fr] md:grid-cols-[1fr_2fr] h-full w-full gap-5",
     frame:
-      "rounded-lg bg-blue h-full w-full relative overflow-hidden border-16 border-blue md:row-span-2 ",
+      "relative rounded-lg bg-blue h-full w-full relative overflow-hidden border-16 border-blue md:row-span-2 ",
   },
 });
 

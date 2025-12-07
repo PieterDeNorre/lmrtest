@@ -9,6 +9,7 @@ export { default as Modal } from "./shared/modal";
 export { default as IconsProvider } from "./shared/IconProvider";
 export { default as Overview } from "./shared/overview";
 export { default as Aeroplane } from "./shared/airplane";
+export { default as Vehicle } from "./shared/car";
 
 // Level Selection Exports
 export { default as LevelSelection } from "./levelSelection/levelSelection";
