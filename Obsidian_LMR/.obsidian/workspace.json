@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "77a62bfdba79cc30",
+    "type": "split",
+    "children": [
+      {
+        "id": "d2875b6f14176235",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66980cbea4bf459c",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Datamap.canvas",
+                "viewState": {
+                  "x": 332.5,
+                  "y": 231.5,
+                  "zoom": -1.0508370036772285
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Datamap"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "95e0cd125c9df050",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b44e96602e9be97",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "704b325c41577b20",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b31734779afd86d2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "88a213ccedd536dc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 269.5
+  },
+  "right": {
+    "id": "c9c15c7506c6be8d",
+    "type": "split",
+    "children": [
+      {
+        "id": "19940dfb98cccc9d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "58dd3ed43693e8f1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Datamap.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Datamap"
+            }
+          },
+          {
+            "id": "56ca321488142760",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Datamap.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Datamap"
+            }
+          },
+          {
+            "id": "21be124ab4ebf80c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "c7f9aee1b0f2ec31",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "931eb3f77fb86498",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Datamap.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Datamap"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-kanban:Create new board": false
+    }
+  },
+  "active": "66980cbea4bf459c",
+  "lastOpenFiles": [
+    "Kanban.md",
+    "Datamap.canvas",
+    "Briefing/202511_Test VDAB_all.pdf",
+    "Briefing/202511_Test VDAB.pdf"
+  ]
+}
