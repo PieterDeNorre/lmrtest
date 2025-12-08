@@ -6,16 +6,32 @@ kanban-plugin: board
 
 ## Contexts
 
-- [ ] Test
-- [ ] Question
+- [ ] [[Question Context]]
+- [ ] [[Quiz Context]]
 
 
-## Screens
+## Views
 
+- [ ] Select level
+- [ ] Grid view
+- [ ] Job location view
+- [ ] Multiple Choice view
+- [ ] Tile game view
+- [ ] Action reaction view
 
 
 ## Components
 
+- [ ] Level-option
+- [ ] Avatar
+- [ ] Info corner
+- [ ] Map
+- [ ] Modal (Shared)
+- [ ] Job summary (modal)
+- [ ] Button (shared)
+- [ ] Progress (shared)
+- [ ] Timer (overall)
+- [ ] Timer question
 
 
 ## Logic

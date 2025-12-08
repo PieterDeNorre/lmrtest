@@ -17,7 +17,7 @@ const classesInfoCorner = tv({
     headerOverlay: "absolute bg-blue-darkest/50 w-full h-full left-0 top-0",
     headerStatus:
       "h-auto w-full absolute top-0 flex justify-between items-center p-2 gap-2",
-    body: "flex flex-col gap-5 p-5 pt-14 justify-center items-center relative",
+    body: "flex flex-col gap-5 p-5 pt-14 justify-center items-center relative <div",
     avatarLoc: "absolute -top-32",
     title:
       headers({ size: "2xl", color: "blue" }) + " text-center font-bold p-4",
@@ -50,7 +50,6 @@ export default function InfoCorner() {
             {quizStep > 1 && <Progress />}
           </div>
         </div>
-
         <div className={classes.body()}>
           <div className={classes.avatarLoc()}>
             <Avatar

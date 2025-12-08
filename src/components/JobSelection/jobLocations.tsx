@@ -39,7 +39,7 @@ const classesJobLocations = tv({
       "transition duration-300 pointer-events-none group-hover:pointer-events-auto shadow-lg",
     ],
     hoverTriangle:
-      "absolute top-16 -left-3 bg-white w-6 h-6 rounded-sm rotate-45 opacity-0 group-hover:opacity-100",
+      "absolute top-16 -left-2 bg-white w-6 h-6 rounded-sm rotate-45 opacity-0 group-hover:opacity-100",
     hoverText: "flex flex-col gap-2 mb-4 p-8 opacity-0 group-hover:opacity-100",
     title:
       headers({ size: "xl", color: "blue" }) +

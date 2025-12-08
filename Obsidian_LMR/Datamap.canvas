@@ -24,16 +24,18 @@
 		{"id":"ca65285faf59f8fb","type":"text","text":"Info corner","x":640,"y":-370,"width":250,"height":60,"color":"4"},
 		{"id":"406d3758c176faa9","type":"text","text":"Time Control","x":640,"y":680,"width":250,"height":60,"color":"1"},
 		{"id":"62d91f27be579dc0","type":"text","text":"Score calc questions / type","x":640,"y":780,"width":250,"height":60,"color":"1"},
-		{"id":"4d0b3ec86b36b1f1","type":"text","text":"Modals","x":1015,"y":179,"width":250,"height":60,"color":"5"},
-		{"id":"21beba190f55bd0f","type":"text","text":"Question/level result modal","x":1415,"y":179,"width":250,"height":60,"color":"5"},
-		{"id":"55efb12878916576","type":"text","text":"Diploma Modal","x":1415,"y":399,"width":250,"height":60,"color":"5"},
-		{"id":"b2daa65682cfda96","type":"text","text":"Result  modal","x":1415,"y":289,"width":250,"height":60,"color":"5"},
 		{"id":"652632ccc4f3bc29","type":"text","text":"? Caching","x":-1000,"y":-144,"width":250,"height":50},
 		{"id":"a6b8b0c51adabb39","type":"text","text":"? Tracking","x":-1000,"y":-77,"width":250,"height":50},
 		{"id":"78541da2b3ae31a1","type":"text","text":"? Sending saving data","x":-1000,"y":-2,"width":250,"height":50},
 		{"id":"20ca2f5f05fb6d2b","type":"text","text":"QuizData api","x":-1000,"y":-377,"width":250,"height":50},
 		{"id":"7af30c0c5d1ea597","type":"text","text":"CMS","x":-1000,"y":-310,"width":250,"height":50},
-		{"id":"82a31c6972a0432e","type":"text","text":"Datamodels","x":-1000,"y":119,"width":250,"height":60}
+		{"id":"82a31c6972a0432e","type":"text","text":"Datamodels","x":-1000,"y":119,"width":250,"height":60},
+		{"id":"4d0b3ec86b36b1f1","type":"text","text":"Modal Wrapper","x":1400,"y":-370,"width":250,"height":60,"color":"4"},
+		{"id":"21beba190f55bd0f","type":"text","text":"Question/level result modal","x":1800,"y":-370,"width":250,"height":60,"color":"5"},
+		{"id":"55efb12878916576","type":"text","text":"Diploma Modal","x":1800,"y":-150,"width":250,"height":60,"color":"5"},
+		{"id":"b2daa65682cfda96","type":"text","text":"Result  modal","x":1800,"y":-260,"width":250,"height":60,"color":"5"},
+		{"id":"3b5097078100b0c6","x":-120,"y":-120,"width":250,"height":60,"color":"5","type":"text","text":"Level Option"},
+		{"id":"69218328db6b3c8d","x":1800,"y":-30,"width":250,"height":60,"color":"5","type":"text","text":"Welcome"}
 	],
 	"edges":[
 		{"id":"dc3e863f4bdbb0eb","fromNode":"199663aeb15afd5a","fromSide":"bottom","toNode":"2f7aefdfdd74d451","toSide":"top"},
@@ -66,6 +68,9 @@
 		{"id":"0cd9be3ae0767182","fromNode":"7af30c0c5d1ea597","fromSide":"right","toNode":"199663aeb15afd5a","toSide":"left"},
 		{"id":"a6ef263fa5ab6fe0","fromNode":"199663aeb15afd5a","fromSide":"left","toNode":"652632ccc4f3bc29","toSide":"right"},
 		{"id":"496c64aa18a1bba2","fromNode":"199663aeb15afd5a","fromSide":"left","toNode":"a6b8b0c51adabb39","toSide":"right"},
-		{"id":"031a4f61520754b3","fromNode":"199663aeb15afd5a","fromSide":"left","toNode":"78541da2b3ae31a1","toSide":"right"}
+		{"id":"031a4f61520754b3","fromNode":"199663aeb15afd5a","fromSide":"left","toNode":"78541da2b3ae31a1","toSide":"right"},
+		{"id":"31bf1661034cc964","fromNode":"e6aeaf10f5e8d686","fromSide":"bottom","toNode":"3b5097078100b0c6","toSide":"top"},
+		{"id":"bddf7fcc7834fcf6","fromNode":"33526aa0a0af1ede","fromSide":"top","toNode":"ca65285faf59f8fb","toSide":"left"},
+		{"id":"82e0391ad73d5dc9","fromNode":"4d0b3ec86b36b1f1","fromSide":"right","toNode":"69218328db6b3c8d","toSide":"left"}
 	]
 }

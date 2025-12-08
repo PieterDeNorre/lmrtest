@@ -4,27 +4,49 @@
     "type": "split",
     "children": [
       {
-        "id": "d2875b6f14176235",
+        "id": "0e9496155a257313",
         "type": "tabs",
         "children": [
           {
-            "id": "66980cbea4bf459c",
+            "id": "32c2421933ab344b",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
                 "file": "Datamap.canvas",
                 "viewState": {
-                  "x": 332.5,
-                  "y": 231.5,
-                  "zoom": -1.0508370036772285
+                  "x": 1407.6797960069446,
+                  "y": 223.91471354166674,
+                  "zoom": -0.7608123361205742
                 }
               },
               "icon": "lucide-layout-dashboard",
               "title": "Datamap"
             }
+          },
+          {
+            "id": "0b5482a8e6b0458a",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "Kanban.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Kanban"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Datamap.canvas",
+                "file": "Kanban.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Datamap"
+              "title": "Backlinks for Kanban"
             }
           },
           {
@@ -116,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Datamap.canvas",
+                "file": "Kanban.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Datamap"
+              "title": "Outgoing links from Kanban"
             }
           },
           {
@@ -159,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Datamap.canvas",
+                "file": "Kanban.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Datamap"
+              "title": "Outline of Kanban"
             }
           }
         ]
@@ -187,11 +209,16 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "66980cbea4bf459c",
+  "active": "0b5482a8e6b0458a",
   "lastOpenFiles": [
-    "Kanban.md",
     "Datamap.canvas",
+    "Kanban.md",
+    "Context/Question Context.md",
+    "Briefing/202511_Test VDAB_screens.pdf",
     "Briefing/202511_Test VDAB_all.pdf",
+    "Context/Quiz Context.md",
+    "Context",
+    "Components",
     "Briefing/202511_Test VDAB.pdf"
   ]
 }
