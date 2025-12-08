@@ -27,8 +27,6 @@ export interface QuestionContextType {
   setCurrentQuestionIndex: (index: number) => void;
   answers: Record<string | number, string>;
   setAnswer: (questionId: string | number, answer: string) => void;
-  solvedQuestions: Solved[];
-  setSolvedQuestions: React.Dispatch<React.SetStateAction<Solved[]>>;
 }
 
 // Create the context
@@ -59,7 +57,6 @@ export const QuestionProvider = ({
   const [questions] = useState<Question[]>(initialQuestions);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1);
   const [answers, setAnswers] = useState<Record<string | number, string>>({});
-  const [solvedQuestions, setSolvedQuestions] = useState<Solved[]>([]);
 
   const setAnswer = (questionId: string | number, answer: string) => {
     setAnswers((prev) => ({
@@ -74,8 +71,6 @@ export const QuestionProvider = ({
     setCurrentQuestionIndex,
     answers,
     setAnswer,
-    solvedQuestions,
-    setSolvedQuestions,
   };
 
   return (
