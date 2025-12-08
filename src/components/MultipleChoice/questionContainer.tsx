@@ -218,7 +218,7 @@ const QuestionContainer = ({
                 variant="tertiary"
                 label={btnLabels.tip}
                 action={() => {}}
-                disabled={!started}
+                disabled={true}
                 animate
               />
             </motion.div>

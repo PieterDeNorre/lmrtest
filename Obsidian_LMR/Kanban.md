@@ -26,8 +26,11 @@ kanban-plugin: board
 - [ ] Avatar
 - [ ] Info corner
 - [ ] Map
+- [ ] Job location
 - [ ] Modal (Shared)
 - [ ] Job summary (modal)
+- [ ] Job result (modal)
+- [ ] Level result (modal)
 - [ ] Button (shared)
 - [ ] Progress (shared)
 - [ ] Timer (overall)
