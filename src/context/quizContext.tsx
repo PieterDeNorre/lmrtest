@@ -6,16 +6,12 @@ import { SelectedAnswer } from "@/components/multipleChoice/questionContainer";
 export interface QuizContextType {
   // Define your context properties here
   timeLimit: number;
-  progress: number;
-  score: number;
   level: string;
   isTimerRunning: boolean;
   isPaused: boolean;
   quizStep: number;
   quizStarted: boolean;
   results: questionResult[];
-  setScore: (score: number) => void;
-  setProgress: (progress: number) => void;
   setLevel: (level: string) => void;
   startTimer: () => void;
   pauseTimer: () => void;
@@ -33,7 +29,7 @@ export interface questionResult {
   selectedAnswers: SelectedAnswer[];
 }
 
-export const QuizContext = createContext<QuizContextType | null>(null);
+const QuizContext = createContext<QuizContextType | null>(null);
 
 export const useQuizContext = () => {
   const context = useContext(QuizContext);
@@ -148,16 +144,12 @@ export const QuizProvider = ({ children, time_limit_s }: QuizProviderProps) => {
     <QuizContext.Provider
       value={{
         timeLimit,
-        progress,
-        score,
         level,
         isTimerRunning,
         isPaused,
         quizStep,
         quizStarted,
         results,
-        setScore,
-        setProgress,
         setLevel,
         startTimer,
         pauseTimer,

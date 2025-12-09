@@ -30,7 +30,7 @@ export interface QuestionContextType {
 }
 
 // Create the context
-export const QuestionsContext = createContext<QuestionContextType | undefined>(
+const QuestionsContext = createContext<QuestionContextType | undefined>(
   undefined
 );
 

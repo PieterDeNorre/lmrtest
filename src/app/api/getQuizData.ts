@@ -1,6 +1,6 @@
 const url = "https://lab.lfwd.be/dev-test/quiz_data.json";
 
-export const getQuizData = async () => {
+const getQuizData = async () => {
   try {
     const res = await fetch(url, {
       method: "GET",
@@ -27,22 +27,5 @@ export const getQuizData = async () => {
     };
   }
 };
-
-// Alternative API route handler format for Next.js API routes
-export async function GET() {
-  const result = await getQuizData();
-
-  if (!result.success) {
-    return new Response(JSON.stringify({ error: result.error }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
-  return new Response(JSON.stringify(result.data), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
-}
 
 export default getQuizData;

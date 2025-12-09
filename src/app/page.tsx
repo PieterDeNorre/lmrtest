@@ -1,10 +1,14 @@
 import { tv } from "tailwind-variants";
 import { headers } from "../tailwind/global";
-import { getQuizData } from "./api/getQuizData";
+import getQuizData from "./api/getQuizData";
 import { QuestionProvider } from "@/context/questionsContext";
 import { QuizProvider } from "@/context/quizContext";
-import { LevelSelection, JobSelection, Overview } from "@/components";
-import MultipleChoice from "@/components/multipleChoice/multipleChoice";
+import {
+  LevelSelection,
+  JobSelection,
+  Overview,
+  MultipleChoice,
+} from "@/components";
 
 const classesAppContainer = tv({
   slots: {

@@ -1,5 +1,4 @@
 // Shared Component Exports
-export { default as QuizStatus } from "./shared/quizStatus";
 export { default as Btn } from "./shared/btn";
 export { default as InfoCorner } from "./shared/infoCorner";
 export { default as Avatar } from "./shared/avatar";

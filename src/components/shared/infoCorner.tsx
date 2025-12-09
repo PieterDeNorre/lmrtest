@@ -1,8 +1,7 @@
 import { headers } from "@/tailwind/global";
 import { tv } from "tailwind-variants";
-import { Btn, Avatar, Progress, IconsProvider } from "@/components";
+import { Btn, Avatar, Progress, IconsProvider, Timer } from "@/components";
 import Image from "next/image";
-import Timer from "./timer";
 import { useQuizContext } from "@/context/quizContext";
 import { infoCornerText, infoCornerQuestion, btnLabels } from "@/mock/flavour";
 import parse from "html-react-parser";
