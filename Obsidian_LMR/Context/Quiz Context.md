@@ -1,23 +1,25 @@
 ---
-Estimation:
+Estimation: "2"
 tags:
   - Context
 ---
-## Informatie
+## Info
 
 Context waar alle globale data van de app verzameld zal worden.
 Bereikbaar vanuit elk component.
 
-values: 
+## Provides
 - Game time limit: number
 	- isTImerRunning: boolean
 	- isPauzed: boolean
-	
-- progress: number
-- score: number
+
+- quizStarted: boolean
+-  progress: number
 - level: number
-- quiz
+- quizStep : number
+- results: Array
+
+setters for all parameters
 
 
-## Definition of done
 

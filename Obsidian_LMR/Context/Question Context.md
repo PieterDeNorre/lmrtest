@@ -1,11 +1,18 @@
 ---
-Estimation:
+Estimation: "3"
 tags:
   - Context
 ---
+## Info
 
-## User Story
+Context waar alle data van de job vragen en spelletjes verzameld zal worden.  
+Enkel bereikbaar voor componenten binnen de job locaties.
 
+## Provides
 
-## Definition of done
+- currentJobIndex
+- questions: array
+- currentQuestionIndex:
+- answers
 
+setters for all parameters

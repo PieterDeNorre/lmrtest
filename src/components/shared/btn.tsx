@@ -1,6 +1,5 @@
 import { headers } from "@/tailwind/global";
 import { motion } from "framer-motion";
-import { circle } from "framer-motion/client";
 import { tv } from "tailwind-variants";
 
 type BtnProps = {
@@ -178,4 +177,5 @@ const Btn = ({
     </motion.div>
   );
 };
+
 export default Btn;

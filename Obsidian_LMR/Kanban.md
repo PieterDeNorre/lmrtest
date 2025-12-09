@@ -22,26 +22,26 @@ kanban-plugin: board
 
 ## Components
 
-- [ ] Level-option
-- [ ] Avatar
-- [ ] Info corner
-- [ ] Tile item overview
-- [ ] Map
-- [ ] Job location
-- [ ] Modal (Shared)
+- [ ] [[Level option]]
+- [ ] [[Avatar]]
+- [ ] [[Info corner]]
+- [ ] [[Map]]
+- [ ] [[Job locations]]
+- [ ] [[Modal wrapper]] (Shared)
 - [ ] Job summary (modal)
 - [ ] Job result (modal)
-- [ ] Game overview (modal)
+- [ ] [[Overview]] (modal)
 - [ ] Diploma (modal)
 - [ ] Level result (modal)
-- [ ] Button (shared)
-- [ ] Progress (shared)
-- [ ] Timer (overall)
-- [ ] Timer question
+- [ ] [[Button]]
+- [ ] [[Progress]]
+- [ ] [[Timer]] (overall)
 
 
 ## Logic
 
+- [ ] Score calculation and validation
+- [ ] Time control
 
 
 

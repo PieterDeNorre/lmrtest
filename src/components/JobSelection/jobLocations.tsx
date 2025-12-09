@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/purity */
 "use client";
 
 import { headers } from "@/tailwind/global";
@@ -18,7 +17,7 @@ import {
   positions,
 } from "@/mock/flavour";
 import parse from "html-react-parser";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const classesJobLocations = tv({
@@ -122,8 +121,6 @@ const JobLocations = () => {
     idx: index,
     done: results.some((res) => res.index === index),
   }));
-
-  useEffect(() => {}, [hoverActive]);
 
   if (!quizStarted) {
     return <Modal />;

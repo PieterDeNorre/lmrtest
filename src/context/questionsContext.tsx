@@ -28,6 +28,10 @@ export interface QuestionContextType {
   answers: Record<string | number, string>;
   setAnswer: (questionId: string | number, answer: string) => void;
 }
+export interface QuestionProviderProps {
+  children: ReactNode;
+  initialQuestions?: Question[];
+}
 
 // Create the context
 const QuestionsContext = createContext<QuestionContextType | undefined>(
@@ -44,11 +48,6 @@ export const useQuestionsContext = () => {
   }
   return context;
 };
-
-export interface QuestionProviderProps {
-  children: ReactNode;
-  initialQuestions?: Question[];
-}
 
 export const QuestionProvider = ({
   children,

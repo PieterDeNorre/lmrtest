@@ -1,24 +1,71 @@
 {
   "main": {
-    "id": "77a62bfdba79cc30",
+    "id": "5324373015726ba8",
     "type": "split",
     "children": [
       {
-        "id": "0e9496155a257313",
+        "id": "60daa1df776b70ac",
         "type": "tabs",
         "children": [
           {
-            "id": "32c2421933ab344b",
+            "id": "74651fce2041b822",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "Context/Quiz Context.md",
-                "mode": "source",
-                "source": false
+                "file": "Kanban.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
               },
-              "icon": "lucide-file",
-              "title": "Quiz Context"
+              "icon": "lucide-trello",
+              "title": "Kanban"
+            }
+          },
+          {
+            "id": "18e53181b230e4b1",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Datamap.canvas",
+                "viewState": {
+                  "x": 332.5,
+                  "y": 154,
+                  "zoom": -0.07317594864573837
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Datamap"
+            }
+          }
+        ]
+      },
+      {
+        "id": "680e916ff0077b43",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b9e478611ddebca",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Datamap.canvas",
+                "viewState": {
+                  "x": 848.3151964719226,
+                  "y": 71.21094160663685,
+                  "zoom": -0.5164987025519885
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Datamap"
             }
           }
         ]
@@ -53,7 +100,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:shared",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +141,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Context/Quiz Context.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +150,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Quiz Context"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +159,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Context/Quiz Context.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Quiz Context"
+              "title": "Outgoing links"
             }
           },
           {
@@ -156,13 +201,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Context/Quiz Context.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Quiz Context"
+              "title": "Outline"
             }
           }
         ]
@@ -181,18 +225,33 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-kanban:Create new board": false
+      "obsidian-kanban:Create new board": false,
+      "homepage:Open homepage": false
     }
   },
-  "active": "32c2421933ab344b",
+  "active": "74651fce2041b822",
   "lastOpenFiles": [
+    "Overzicht.md",
     "Datamap.canvas",
-    "Context/Quiz Context.md",
-    "Datamodel.md",
-    "Context/Question Context.md",
-    "_Templates/component.md",
     "Kanban.md",
-    "Untitled",
+    "Components/Job locations.md",
+    "Components/Info corner footer.md",
+    "Components/Info corner.md",
+    "Components/Overview.md",
+    "Components/Button.md",
+    "Utils",
+    "Components/Progress.md",
+    "Context/Quiz Context.md",
+    "Context/Question Context.md",
+    "Progress (shared).md",
+    "Components/Timer.md",
+    "_Templates/component.md",
+    "Components/Avatar.md",
+    "Components/Level option.md",
+    "Components/Map.md",
+    "Components/Modal wrapper.md",
+    "Questions Context.md",
+    "Datamodel.md",
     "_Templates",
     "Logic",
     "Views",

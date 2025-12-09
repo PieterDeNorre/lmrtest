@@ -17,7 +17,7 @@ const classesInfoCorner = tv({
     headerStatus:
       "h-auto w-full absolute top-0 flex justify-between items-center p-2 gap-2",
     body: "flex flex-col gap-5 p-5 pt-14 justify-center items-center relative <div",
-    avatarLoc: "absolute -top-32",
+    avatar: "absolute -top-32",
     title:
       headers({ size: "2xl", color: "blue" }) + " text-center font-bold p-4",
     titleLine: "block w-[100px] h-[2px] bg-blue-light mx-auto mt-2",
@@ -50,7 +50,7 @@ export default function InfoCorner() {
           </div>
         </div>
         <div className={classes.body()}>
-          <div className={classes.avatarLoc()}>
+          <div className={classes.avatar()}>
             <Avatar
               src={`/avatars/avatar_3.png`}
               animation={true}

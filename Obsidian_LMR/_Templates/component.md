@@ -2,8 +2,16 @@
 Estimation:
 tags:
 ---
-## User Story
+## Info
 
+Lorem
 
-## Definition of done
+## Attributes
 
+- src: string
+- animation: bool
+- alt: string
+
+## Gebruikt in
+
+- [[Some Comp]]
