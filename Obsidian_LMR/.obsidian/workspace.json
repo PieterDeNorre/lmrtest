@@ -4,25 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "60daa1df776b70ac",
+        "id": "b8e5febb9344c07b",
         "type": "tabs",
         "children": [
           {
-            "id": "74651fce2041b822",
+            "id": "77191a001093f1af",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Components/Job locaties.md",
+                "file": "Overzicht.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Job locaties"
+              "title": "Overzicht"
             }
           },
           {
-            "id": "18e53181b230e4b1",
+            "id": "1838ee8a7d5831f1",
             "type": "leaf",
             "state": {
               "type": "kanban",
@@ -41,9 +41,22 @@
               "icon": "lucide-trello",
               "title": "Kanban"
             }
+          },
+          {
+            "id": "1ee106ab31b63d70",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Utils/Tegel spel utils.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tegel spel utils"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -204,31 +217,35 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "18e53181b230e4b1",
+  "active": "77191a001093f1af",
   "lastOpenFiles": [
-    "Components/Diploma.md",
-    "Kanban.md",
     "Datamap.canvas",
+    "Kanban.md",
+    "Views/Level selecteren.md",
+    "Views/Grid.md",
+    "Views/Job locatie.md",
+    "Views/Vraagstelling.md",
+    "Overzicht.md",
+    "Utils/Tijd controle.md",
+    "Utils/Tegel spel utils.md",
+    "Utils/Reactie spel utils.md",
+    "Utils/Meerkeuze vragen utils.md",
+    "Components/Level resultaat.md",
+    "Job options.md",
+    "Some Comp.md",
+    "Components/Job opties.md",
+    "Components/Job options.md",
+    "Components/Spel overzicht.md",
     "Components/Job locaties.md",
-    "Level resultaat.md",
+    "Components/Diploma.md",
     "Components/Jobs overzicht.md",
     "Components/Info corner.md",
-    "Overzicht.md",
     "Components/Info corner footer.md",
     "Components/Button.md",
     "Utils",
     "Components/Progress.md",
     "Context/Quiz Context.md",
     "Context/Question Context.md",
-    "Progress (shared).md",
-    "Components/Timer.md",
-    "_Templates/component.md",
-    "Components/Avatar.md",
-    "Components/Level option.md",
-    "Components/Map.md",
-    "Components/Modal wrapper.md",
-    "Questions Context.md",
-    "Datamodel.md",
     "_Templates",
     "Logic",
     "Views",

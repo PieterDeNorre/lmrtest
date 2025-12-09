@@ -12,12 +12,10 @@ kanban-plugin: board
 
 ## Views
 
-- [ ] Select level
-- [ ] Grid view
-- [ ] Job location view
-- [ ] Multiple Choice view
-- [ ] Tile game view
-- [ ] Action reaction view
+- [ ] [[Level selecteren]]
+- [ ] [[Grid]]
+- [ ] [[Job locatie]]
+- [ ] [[Vraagstelling]]
 
 
 ## Components
@@ -28,8 +26,8 @@ kanban-plugin: board
 - [ ] [[Map]]
 - [ ] [[Job locaties]]
 - [ ] [[Modal wrapper]] (Shared)
-- [ ] Spel overzicht (modal)
-- [ ] Job opties (modal)
+- [ ] [[Spel overzicht]] (modal)
+- [ ] [[Job opties]] (modal)
 - [ ] [[Jobs overzicht]] (modal)
 - [ ] [[Diploma]] (modal)
 - [ ] [[Level resultaat]] (modal)
@@ -40,8 +38,10 @@ kanban-plugin: board
 
 ## Logic
 
-- [ ] Score calculation and validation
-- [ ] Time control
+- [ ] [[Tijd controle]]
+- [ ] [[Meerkeuze vragen utils]]
+- [ ] [[Tegel spel utils]]
+- [ ] [[Reactie spel utils]]
 
 
 

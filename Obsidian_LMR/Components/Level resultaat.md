@@ -1,6 +1,7 @@
 ---
 Estimation: "2"
 tags:
+  - Component
 ---
 ## Info
 

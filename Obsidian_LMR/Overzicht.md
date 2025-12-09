@@ -2,6 +2,7 @@
 ## Bedenkingen
 Is er nood aan:
 - Zijn er nog bijkomende types van vragen/spelletjes
+- interpretaties van scores
 - Caching
 - Tracking
 - Saving data for user to db
@@ -19,7 +20,6 @@ TABLE Estimation AS "Inschatting (h)" FROM "Components" SORT file.name ASC
 ```dataview
 TABLE Estimation AS "Inschatting (h)" FROM "Views" SORT file.name ASC
 ```
-
 ### Utils
 ```dataview
 TABLE Estimation AS "Inschatting (h)" FROM "Utils" SORT file.name ASC
