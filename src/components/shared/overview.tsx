@@ -108,7 +108,7 @@ const Overview = () => {
             setCurrentQuestionIndex(0);
           }}
         >
-          <IconsProvider icon="Cross" className="text-blue-dark h-6 w-6 " />
+          <IconsProvider icon="Cross" className="text-blue-dark h-5 w-5 " />
         </Btn>
       </motion.div>
     );

@@ -23,8 +23,7 @@
 		{"id":"ca65285faf59f8fb","type":"text","text":"[[Info corner]]","x":865,"y":135,"width":250,"height":60,"color":"4"},
 		{"id":"406d3758c176faa9","type":"text","text":"Time Control","x":-120,"y":-482,"width":250,"height":60,"color":"1"},
 		{"id":"142231fe192df54e","type":"text","text":"Utils","x":-501,"y":-482,"width":250,"height":60,"color":"1"},
-		{"id":"21beba190f55bd0f","type":"text","text":"Question modal","x":1415,"y":234,"width":250,"height":60,"color":"5"},
-		{"id":"b2daa65682cfda96","type":"text","text":"Job result  modal","x":1415,"y":344,"width":250,"height":60,"color":"5"},
+		{"id":"21beba190f55bd0f","type":"text","text":"Spel modal","x":1415,"y":234,"width":250,"height":60,"color":"5"},
 		{"id":"0ae74d69e78a1efd","type":"text","text":"Multiple choce","x":1414,"y":-90,"width":250,"height":60},
 		{"id":"a314eeddb3bbf3b0","type":"text","text":"Tile game","x":1415,"y":-7,"width":250,"height":60},
 		{"id":"b10ed44b8ce75024","type":"text","text":"Action reaction\n","x":1414,"y":85,"width":250,"height":60},
@@ -33,8 +32,6 @@
 		{"id":"6245bbe5cc5ad745","type":"text","text":"Action/reaction Test","x":280,"y":540,"width":250,"height":60,"color":"2"},
 		{"id":"6e83d36c4874b2f7","type":"text","text":"[[Avatar]]","x":865,"y":540,"width":250,"height":60,"color":"4"},
 		{"id":"96b83984cb45d669","type":"text","text":"[[Info corner footer]] controls","x":865,"y":630,"width":250,"height":60,"color":"5"},
-		{"id":"55efb12878916576","type":"text","text":"Diploma Modal","x":1414,"y":540,"width":250,"height":60,"color":"5"},
-		{"id":"69218328db6b3c8d","type":"text","text":"[[Overview]] modal","x":1414,"y":444,"width":250,"height":60,"color":"5"},
 		{"id":"3b08732bccf43fe0","type":"text","text":"Results status","x":-501,"y":445,"width":250,"height":60,"color":"6"},
 		{"id":"a7a35cde1b8e50fe","type":"text","text":"TimeLimit","x":-500,"y":540,"width":250,"height":60,"color":"6"},
 		{"id":"c9001c864f6310bb","type":"text","text":"Quiz step","x":-500,"y":620,"width":250,"height":60,"color":"6"},
@@ -44,8 +41,11 @@
 		{"id":"df17795545bacf6e","type":"text","text":"Answers","x":-119,"y":620,"width":250,"height":60,"color":"2"},
 		{"id":"40cfb4522efb73df","type":"text","text":"CurrentJobIndex\n","x":-120,"y":444,"width":250,"height":60,"color":"2"},
 		{"id":"b450203d0e7699cb","type":"text","text":"[[Map]]","x":460,"y":-90,"width":250,"height":60,"color":"5"},
-		{"id":"c2c1006f2303b5a7","type":"text","text":"[[Job locations]]","x":460,"y":-7,"width":250,"height":60,"color":"5"},
-		{"id":"304141f406829e87","type":"text","text":"[[Timer]]","x":865,"y":730,"width":250,"height":60,"color":"5"}
+		{"id":"c2c1006f2303b5a7","type":"text","text":"[[Job locaties]]","x":460,"y":-7,"width":250,"height":60,"color":"5"},
+		{"id":"304141f406829e87","type":"text","text":"[[Timer]]","x":865,"y":730,"width":250,"height":60,"color":"5"},
+		{"id":"69218328db6b3c8d","type":"text","text":"[[Jobs overzicht]] modal","x":1415,"y":320,"width":250,"height":60,"color":"5"},
+		{"id":"b2daa65682cfda96","type":"text","text":"Job options  modal","x":1741,"y":320,"width":250,"height":60,"color":"5"},
+		{"id":"55efb12878916576","type":"text","text":"[[Diploma]] modal","x":1415,"y":420,"width":250,"height":60,"color":"5"}
 	],
 	"edges":[
 		{"id":"dc3e863f4bdbb0eb","fromNode":"199663aeb15afd5a","fromSide":"bottom","toNode":"2f7aefdfdd74d451","toSide":"top"},
@@ -64,7 +64,6 @@
 		{"id":"74c6072bed527a6c","fromNode":"e6aeaf10f5e8d686","fromSide":"right","toNode":"33526aa0a0af1ede","toSide":"left"},
 		{"id":"ff2c7a70e2130326","fromNode":"33526aa0a0af1ede","fromSide":"right","toNode":"256c348d059530ba","toSide":"left"},
 		{"id":"ecce235d22271753","fromNode":"4d0b3ec86b36b1f1","fromSide":"right","toNode":"21beba190f55bd0f","toSide":"left"},
-		{"id":"c93af2453dfc38df","fromNode":"4d0b3ec86b36b1f1","fromSide":"right","toNode":"b2daa65682cfda96","toSide":"left"},
 		{"id":"52cae2be690254fb","fromNode":"4d0b3ec86b36b1f1","fromSide":"right","toNode":"55efb12878916576","toSide":"left"},
 		{"id":"5bce8948df5f9e25","fromNode":"950873eb0fbeb149","fromSide":"bottom","toNode":"e3758f27e87ab0a9","toSide":"top"},
 		{"id":"7c7b45138d9a8dbf","fromNode":"256c348d059530ba","fromSide":"bottom","toNode":"b450203d0e7699cb","toSide":"top"},
@@ -94,6 +93,7 @@
 		{"id":"2a16c19df0ba4c5b","fromNode":"33526aa0a0af1ede","fromSide":"bottom","toNode":"ca65285faf59f8fb","toSide":"top"},
 		{"id":"f6c3ade33113a761","fromNode":"b450203d0e7699cb","fromSide":"bottom","toNode":"c2c1006f2303b5a7","toSide":"top"},
 		{"id":"e69b883357c82994","fromNode":"ca65285faf59f8fb","fromSide":"left","toNode":"304141f406829e87","toSide":"left"},
-		{"id":"fb55246b9c6c3ab7","fromNode":"ca65285faf59f8fb","fromSide":"left","toNode":"96b83984cb45d669","toSide":"left"}
+		{"id":"fb55246b9c6c3ab7","fromNode":"ca65285faf59f8fb","fromSide":"left","toNode":"96b83984cb45d669","toSide":"left"},
+		{"id":"5ce3da21efd54514","fromNode":"69218328db6b3c8d","fromSide":"right","toNode":"b2daa65682cfda96","toSide":"left"}
 	]
 }

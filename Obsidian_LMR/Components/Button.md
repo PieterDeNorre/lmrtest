@@ -33,5 +33,5 @@ zal verschillende sizes en vormen aan kunnen square, circle, notRounded etc..
 ## Gebruikt in
 
 - [[Info corner]]
-- [[Job locations]]
+- [[Job locaties]]
 - [[Modal wrapper]]

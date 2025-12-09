@@ -26,13 +26,13 @@ kanban-plugin: board
 - [ ] [[Avatar]]
 - [ ] [[Info corner]]
 - [ ] [[Map]]
-- [ ] [[Job locations]]
+- [ ] [[Job locaties]]
 - [ ] [[Modal wrapper]] (Shared)
-- [ ] Job summary (modal)
-- [ ] Job result (modal)
-- [ ] [[Overview]] (modal)
-- [ ] Diploma (modal)
-- [ ] Level result (modal)
+- [ ] Spel overzicht (modal)
+- [ ] Job opties (modal)
+- [ ] [[Jobs overzicht]] (modal)
+- [ ] [[Diploma]] (modal)
+- [ ] [[Level resultaat]] (modal)
 - [ ] [[Button]]
 - [ ] [[Progress]]
 - [ ] [[Timer]] (overall)
