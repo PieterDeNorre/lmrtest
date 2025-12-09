@@ -1,6 +1,6 @@
 {
 	"nodes":[
-		{"id":"2f7aefdfdd74d451","type":"text","text":"Quiz Context","x":-500,"y":179,"width":250,"height":60,"color":"6"},
+		{"id":"2f7aefdfdd74d451","type":"text","text":"[[Quiz Context]]","x":-500,"y":179,"width":250,"height":60,"color":"6"},
 		{"id":"d93d5a66e07a02d5","type":"text","text":"Level status","x":-501,"y":353,"width":250,"height":60,"color":"6"},
 		{"id":"68440895f80b2023","type":"text","text":"Questions Context","x":-120,"y":179,"width":250,"height":60,"color":"2"},
 		{"id":"1ef5baac8ab7d7df","type":"text","text":"Questions","x":-120,"y":353,"width":250,"height":60,"color":"2"},
@@ -35,15 +35,14 @@
 		{"id":"1eb7e7cb88316fe3","type":"text","text":"Tile game type","x":280,"y":444,"width":250,"height":60,"color":"2"},
 		{"id":"6245bbe5cc5ad745","type":"text","text":"Action/reaction Test","x":280,"y":540,"width":250,"height":60,"color":"2"},
 		{"id":"6e83d36c4874b2f7","type":"text","text":"Avatar","x":865,"y":540,"width":250,"height":60,"color":"4"},
-		{"id":"96b83984cb45d669","x":865,"y":630,"width":250,"height":60,"color":"4","type":"text","text":"Footer controls"},
+		{"id":"96b83984cb45d669","type":"text","text":"Footer controls","x":865,"y":630,"width":250,"height":60,"color":"4"},
 		{"id":"55efb12878916576","type":"text","text":"Diploma Modal","x":1414,"y":540,"width":250,"height":60,"color":"5"},
 		{"id":"69218328db6b3c8d","type":"text","text":"Game overview","x":1414,"y":444,"width":250,"height":60,"color":"5"},
 		{"id":"3b08732bccf43fe0","type":"text","text":"Results status","x":-501,"y":445,"width":250,"height":60,"color":"6"},
 		{"id":"a7a35cde1b8e50fe","type":"text","text":"TimeLimit","x":-500,"y":540,"width":250,"height":60,"color":"6"},
 		{"id":"c9001c864f6310bb","type":"text","text":"Quiz step","x":-500,"y":620,"width":250,"height":60,"color":"6"},
 		{"id":"2ba674deb0b021d1","type":"text","text":"Quiz started","x":-500,"y":700,"width":250,"height":60,"color":"6"},
-		{"id":"62d91f27be579dc0","type":"text","text":"Score calculator / questions type","x":-119,"y":-407,"width":250,"height":60,"color":"1"},
-		{"id":"1e1b3e3c3e5dfc1a","x":-1400,"y":323,"width":280,"height":377,"type":"file","file":"Untitled.md"}
+		{"id":"62d91f27be579dc0","type":"text","text":"Score calculator / questions type","x":-119,"y":-407,"width":250,"height":60,"color":"1"}
 	],
 	"edges":[
 		{"id":"dc3e863f4bdbb0eb","fromNode":"199663aeb15afd5a","fromSide":"bottom","toNode":"2f7aefdfdd74d451","toSide":"top"},
@@ -89,7 +88,6 @@
 		{"id":"83e940b9839ce23d","fromNode":"ca65285faf59f8fb","fromSide":"left","toNode":"b8d41e5af8c4cf3c","toSide":"left"},
 		{"id":"b80525c253975bbf","fromNode":"4d0b3ec86b36b1f1","fromSide":"left","toNode":"b8d41e5af8c4cf3c","toSide":"left"},
 		{"id":"d90e8df22a887ad2","fromNode":"33526aa0a0af1ede","fromSide":"bottom","toNode":"b450203d0e7699cb","toSide":"left"},
-		{"id":"fb55246b9c6c3ab7","fromNode":"ca65285faf59f8fb","fromSide":"left","toNode":"96b83984cb45d669","toSide":"left"},
-		{"id":"551b8e190b223765","fromNode":"82a31c6972a0432e","fromSide":"bottom","toNode":"1e1b3e3c3e5dfc1a","toSide":"top"}
+		{"id":"fb55246b9c6c3ab7","fromNode":"ca65285faf59f8fb","fromSide":"left","toNode":"96b83984cb45d669","toSide":"left"}
 	]
 }

@@ -71,6 +71,7 @@ export default function LevelSelection() {
             damping: 10,
             stiffness: 100,
           }}
+          onTap={() => setVisible(!isVisible)}
         >
           <AnimatePresence>
             {isVisible &&

@@ -6,34 +6,9 @@
       {
         "id": "0e9496155a257313",
         "type": "tabs",
-        "dimension": 58.24315722469765,
         "children": [
           {
             "id": "32c2421933ab344b",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Datamap.canvas",
-                "viewState": {
-                  "x": -93.46750132114477,
-                  "y": 34.614572583394164,
-                  "zoom": 0.11307126791647126
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Datamap"
-            }
-          }
-        ]
-      },
-      {
-        "id": "d06365485c385dc9",
-        "type": "tabs",
-        "dimension": 41.75684277530235,
-        "children": [
-          {
-            "id": "b126fcfb7b8616a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -119,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Datamap.canvas",
+                "file": "Context/Quiz Context.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Datamap"
+              "title": "Backlinks for Quiz Context"
             }
           },
           {
@@ -138,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Datamap.canvas",
+                "file": "Context/Quiz Context.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Datamap"
+              "title": "Outgoing links from Quiz Context"
             }
           },
           {
@@ -181,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Datamap.canvas",
+                "file": "Context/Quiz Context.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Datamap"
+              "title": "Outline of Quiz Context"
             }
           }
         ]
@@ -211,9 +186,9 @@
   },
   "active": "32c2421933ab344b",
   "lastOpenFiles": [
-    "Context/Quiz Context.md",
     "Datamap.canvas",
-    "Untitled.md",
+    "Context/Quiz Context.md",
+    "Datamodel.md",
     "Context/Question Context.md",
     "_Templates/component.md",
     "Kanban.md",
