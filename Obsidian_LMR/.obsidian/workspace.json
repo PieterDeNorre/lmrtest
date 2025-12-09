@@ -6,6 +6,7 @@
       {
         "id": "0e9496155a257313",
         "type": "tabs",
+        "dimension": 58.24315722469765,
         "children": [
           {
             "id": "32c2421933ab344b",
@@ -15,38 +16,37 @@
               "state": {
                 "file": "Datamap.canvas",
                 "viewState": {
-                  "x": 1407.6797960069446,
-                  "y": 223.91471354166674,
-                  "zoom": -0.7608123361205742
+                  "x": -93.46750132114477,
+                  "y": 34.614572583394164,
+                  "zoom": 0.11307126791647126
                 }
               },
               "icon": "lucide-layout-dashboard",
               "title": "Datamap"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "d06365485c385dc9",
+        "type": "tabs",
+        "dimension": 41.75684277530235,
+        "children": [
           {
-            "id": "0b5482a8e6b0458a",
+            "id": "b126fcfb7b8616a0",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "Kanban.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "Context/Quiz Context.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "Kanban"
+              "icon": "lucide-file",
+              "title": "Quiz Context"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -103,7 +103,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5
+    "width": 254.5
   },
   "right": {
     "id": "c9c15c7506c6be8d",
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kanban.md",
+                "file": "Datamap.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Kanban"
+              "title": "Backlinks for Datamap"
             }
           },
           {
@@ -138,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kanban.md",
+                "file": "Datamap.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Kanban"
+              "title": "Outgoing links from Datamap"
             }
           },
           {
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kanban.md",
+                "file": "Datamap.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Kanban"
+              "title": "Outline of Datamap"
             }
           }
         ]
@@ -209,14 +209,21 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "0b5482a8e6b0458a",
+  "active": "32c2421933ab344b",
   "lastOpenFiles": [
+    "Context/Quiz Context.md",
     "Datamap.canvas",
-    "Kanban.md",
+    "Untitled.md",
     "Context/Question Context.md",
+    "_Templates/component.md",
+    "Kanban.md",
+    "Untitled",
+    "_Templates",
+    "Logic",
+    "Views",
+    "Context/Untitled",
     "Briefing/202511_Test VDAB_screens.pdf",
     "Briefing/202511_Test VDAB_all.pdf",
-    "Context/Quiz Context.md",
     "Context",
     "Components",
     "Briefing/202511_Test VDAB.pdf"

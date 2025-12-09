@@ -25,11 +25,14 @@ kanban-plugin: board
 - [ ] Level-option
 - [ ] Avatar
 - [ ] Info corner
+- [ ] Tile item overview
 - [ ] Map
 - [ ] Job location
 - [ ] Modal (Shared)
 - [ ] Job summary (modal)
 - [ ] Job result (modal)
+- [ ] Game overview (modal)
+- [ ] Diploma (modal)
 - [ ] Level result (modal)
 - [ ] Button (shared)
 - [ ] Progress (shared)
