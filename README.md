@@ -14,7 +14,7 @@ A modern [Next.js](https://nextjs.org) project with [Tailwind CSS v4](https://ta
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone -b develop https://github.com/PieterDeNorre/lmrtest.git
    cd lmrtest
    ```
 

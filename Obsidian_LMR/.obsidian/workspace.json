@@ -11,21 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "Kanban.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "Analyse.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "Kanban"
+              "icon": "lucide-file",
+              "title": "Analyse"
             }
           }
         ]
@@ -189,12 +182,13 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "704b325c41577b20",
   "lastOpenFiles": [
+    "Other",
+    "Kanban.md",
     "Analyse.md",
     "Datamap.canvas",
     "Components/Button.md",
-    "Kanban.md",
     "Views/Level selecteren.md",
     "Views/Grid.md",
     "Views/Job locatie.md",
