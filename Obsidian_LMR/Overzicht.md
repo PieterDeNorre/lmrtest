@@ -1,13 +1,27 @@
+## Plan van aanpak
+
+### A) Functionele analyse van het project en de verwachtingen van de klant visualiseren
+![[Datamap.canvas]]
+### B) Component structuren bepalen
+[[Kanban]]
+### C) Tech stack bepalen
+	- Nextjs 16 (reactjs)
+	- Tailwind-css/Variants (styling)
+	- Framer motion (animaties)
+	- knip (Cleanproject)
+
+### D) Team bepalen aan de hand van expertise en beschikbaarheid
 
 ## Bedenkingen / vragen
 
-- Caching
-- Tracking
-- Saving data for user to db
-- Verschillende talen
+- Browser caching ?
+- Tracking ?
+- Saving data / results to db on a user basis
+- Ondersteuning verschillende talen
 - Zijn er nog bijkomende types van vragen/spelletjes
-- interpretaties van scores voor de overzichten en opties
+- Interpretaties van scores voor de overzichten en opties zijn me nog niet 100% duidelijk
 
+Deze zaken zijn allemaal nog niet opgenomen in de inschattingen
 
 ## Inschattingen
 ### Contexten
@@ -27,9 +41,16 @@ TABLE Estimation AS "Inschatting (h)" FROM "Views" SORT file.name ASC
 TABLE Estimation AS "Inschatting (h)" FROM "Utils" SORT file.name ASC
 ```
 
-## Totaal
+
+### Other
+```dataview
+TABLE Estimation AS "Inschatting (h)" FROM "Other" SORT file.name ASC
+```
+
+
+## Totaal Inschattingen
 ```dataviewjs
-const includeFolders = ["Components", "Views", "Utils", "Context"];
+const includeFolders = ["Components", "Views", "Utils", "Context", "Other"];
 
 const pages = dv.pages().where(p => {
   const estimation = p.Estimation;
@@ -70,6 +91,3 @@ dv.table(["Folder", "Totaal inschatingen (h)"],
 );
 ```
 
-## Mindmap / Kanban
-[[Datamap.canvas]]
-[[Kanban]]
