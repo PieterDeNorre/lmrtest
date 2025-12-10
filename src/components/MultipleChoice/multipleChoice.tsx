@@ -1,0 +1,28 @@
+"use client";
+import { useQuizContext } from "@/context/quizContext";
+import { gameContainers } from "../../tailwind/global";
+import InfoCorner from "../shared/infoCorner";
+import { useQuestionsContext } from "@/context/questionsContext";
+import { QuestionContainer } from "@/components";
+
+export default function MultipleChoice() {
+  const { quizStep } = useQuizContext();
+  const { questions, currentQuestionIndex } = useQuestionsContext();
+  const classes = gameContainers();
+
+  if (quizStep !== 2) return null;
+
+  return (
+    <div className={classes.grid()}>
+      <div className={classes.frame()}>
+        <InfoCorner />
+      </div>
+      <div className={classes.frame()}>
+        <QuestionContainer
+          data={questions[currentQuestionIndex]}
+          validation={false}
+        />
+      </div>
+    </div>
+  );
+}

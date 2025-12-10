@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-blue-darkest: #0e325b;
+  --color-blue-dark: #004475;
+  --color-blue: #0c6aae;
+  --color-blue-light: #2d89cc;
+  --color-blue-lighter: #c2e2fe;
+  --color-yellow-dark: #e1b827;
+  --color-yellow: #ffe200;
+  --color-teal: #49b4aa;
+  --color-grey: #9097a0;
+  --color-grey-light: #f5f5f5;
+  --color-pink-dark: #ea516d;
+  --color-valid: #17a500;
+  --color-error: #f05535;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --shadow-yellow-dark: 0 5px 0 0 var(--color-yellow-dark);
+  --shadow-blue-dark: 0 5px 0 0 var(--color-blue-dark);
+  --shadow-blue-darkest: 0 5px 0 0 var(--color-blue-darkest);
+  --inset-shadow-white: inset -5px -5px 0 0 rgba(255, 255, 255, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Reset only specific elements instead of all elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-20px) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(300px) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+.animate-slide-right {
+  animation: slideRight 8s linear infinite;
 }
