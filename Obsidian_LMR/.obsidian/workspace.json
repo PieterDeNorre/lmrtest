@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Analyse.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -182,7 +182,7 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "704b325c41577b20",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "Other",
     "Kanban.md",

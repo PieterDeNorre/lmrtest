@@ -14,7 +14,7 @@ A modern [Next.js](https://nextjs.org) project with [Tailwind CSS v4](https://ta
 1. **Clone the repository**
 
    ```bash
-   git clone -b develop https://github.com/PieterDeNorre/lmrtest.git
+   git clone <repository-url>
    cd lmrtest
    ```
 
@@ -75,6 +75,7 @@ A modern [Next.js](https://nextjs.org) project with [Tailwind CSS v4](https://ta
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
+- `npm run knip` - Find unused files, dependencies and exports
 
 ## 📝 Obsidian Setup
 

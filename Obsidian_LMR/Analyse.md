@@ -1,11 +1,13 @@
 
-## Bedenkingen
-Is er nood aan:
-- Zijn er nog bijkomende types van vragen/spelletjes
-- interpretaties van scores
+## Bedenkingen / vragen
+
 - Caching
 - Tracking
 - Saving data for user to db
+- Verschillende talen
+- Zijn er nog bijkomende types van vragen/spelletjes
+- interpretaties van scores voor de overzichten en opties
+
 
 ## Inschattingen
 ### Contexten
