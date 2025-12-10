@@ -1,16 +1,16 @@
 ## Plan van aanpak
 
-### A) Functionele analyse van het project en de verwachtingen van de klant visualiseren
+##### A) Functionele analyse van het project en de verwachtingen van de klant visualiseren
 ![[Datamap.canvas]]
-### B) Component structuren bepalen
+##### B) Componenten en  structuren bepalen
 [[Kanban]]
-### C) Tech stack bepalen
+##### C) Tech stack bepalen
 	- Nextjs 16 (reactjs)
 	- Tailwind-css/Variants (styling)
 	- Framer motion (animaties)
 	- knip (Cleanproject)
 
-### D) Team bepalen aan de hand van expertise en beschikbaarheid
+###### D) Team bepalen aan de hand van expertise en beschikbaarheid
 
 ## Bedenkingen / vragen
 
@@ -85,9 +85,11 @@ const folderTotals = Object.entries(byFolder).map(([folder, estimations]) => [
 ]);
 
 const grandTotal = folderTotals.reduce((sum, [folder, total]) => sum + total, 0);
-
-dv.table(["Folder", "Totaal inschatingen (h)"], 
-  [...folderTotals, ["**Totaal**", `**${grandTotal}**`]]
+const days = grandTotal / 8
+dv.table(["Folder", "Totaal inschattingen (h)"], 
+  [...folderTotals, ["**Totaal uren**", `**${grandTotal}**`], ["**Totaal dagen**", `**${days}**`]]
 );
+
 ```
+
 

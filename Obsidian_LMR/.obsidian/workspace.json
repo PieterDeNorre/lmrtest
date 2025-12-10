@@ -11,40 +11,14 @@
             "id": "ac96d5136291da01",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "Kanban.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "Context/Question Context.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "Kanban"
-            }
-          },
-          {
-            "id": "1f50e55ae9f7af1e",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Datamap.canvas",
-                "viewState": {
-                  "x": 565.1410965906587,
-                  "y": 70.02594572368412,
-                  "zoom": -0.20116216097225303
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Datamap"
+              "icon": "lucide-file",
+              "title": "Question Context"
             }
           }
         ]
@@ -213,8 +187,10 @@
     "Datamap.canvas",
     "Kanban.md",
     "Overzicht.md",
-    "2025-12-10.md",
+    "Components/Map.md",
     "Other/Functionele analyse en testing.md",
+    "Datamodel.md",
+    "2025-12-10.md",
     "Components/Question container.md",
     "Other/Project management.md",
     "Components/Reactie vragen.md",
@@ -227,7 +203,6 @@
     "Components/Level resultaat.md",
     "Components/Level option.md",
     "Components/Jobs overzicht.md",
-    "Components/Map.md",
     "Utils/Tijd controle.md",
     "Utils/Tegel spel utils.md",
     "Utils/Reactie spel utils.md",
@@ -235,7 +210,6 @@
     "Views/Grid.md",
     "Views/Job locatie.md",
     "Views/Level selecteren.md",
-    "Views/Vraagstelling.md",
     "Briefing/202511_Test VDAB.pdf",
     "Other",
     "Utils",

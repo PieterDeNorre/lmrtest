@@ -1,6 +1,6 @@
 {
 	"nodes":[
-		{"id":"2c7a135daadc40ec","x":-1081,"y":-639,"width":250,"height":60,"type":"text","text":""},
+		{"id":"0adbf0ea984ed535","x":519,"y":-590,"width":250,"height":60,"type":"text","text":""},
 		{"id":"2f7aefdfdd74d451","type":"text","text":"[[Quiz Context]]","x":-500,"y":179,"width":250,"height":50,"color":"6"},
 		{"id":"d93d5a66e07a02d5","type":"text","text":"Level status","x":-501,"y":353,"width":250,"height":50,"color":"6"},
 		{"id":"68440895f80b2023","type":"text","text":"[[Question Context]]","x":-120,"y":179,"width":250,"height":50,"color":"2"},
@@ -15,7 +15,6 @@
 		{"id":"78541da2b3ae31a1","type":"text","text":"? Sending saving data","x":-1000,"y":-2,"width":250,"height":50},
 		{"id":"20ca2f5f05fb6d2b","type":"text","text":"QuizData api","x":-1000,"y":-377,"width":250,"height":50},
 		{"id":"7af30c0c5d1ea597","type":"text","text":"CMS","x":-1000,"y":-310,"width":250,"height":50},
-		{"id":"82a31c6972a0432e","type":"text","text":"Data model quiz","x":-1000,"y":119,"width":250,"height":50},
 		{"id":"3b5097078100b0c6","type":"text","text":"[[Level option]]","x":-120,"y":-120,"width":250,"height":50,"color":"5"},
 		{"id":"ca65285faf59f8fb","type":"text","text":"[[Info corner]]","x":865,"y":135,"width":250,"height":50,"color":"4"},
 		{"id":"21beba190f55bd0f","type":"text","text":"[[Spel overzicht]] modal","x":1415,"y":234,"width":250,"height":50,"color":"5"},
