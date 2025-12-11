@@ -4,24 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0f7632b00cbdff33",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "1e383f64cd50f8d9",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Datamap.canvas",
-                "viewState": {
-                  "x": 1641.8056415263536,
-                  "y": -250.94699204051994,
-                  "zoom": -0.3188639322916666
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Datamap"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -185,13 +178,13 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "1e383f64cd50f8d9",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Datamap.canvas",
     "Inschattingen.md",
     "Plan van Aanpak.md",
     "Kanban.md",
     "Project analyse.md",
-    "Datamap.canvas",
     "Plan van aanpak.md",
     "Untitled",
     "Components/Map.md",
