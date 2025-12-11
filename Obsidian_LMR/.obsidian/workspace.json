@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "f4ad6e69afa43ee0",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "edb4d5826396ea4b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Project analyse.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Project analyse"
             }
           }
         ]
@@ -178,13 +182,14 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "edb4d5826396ea4b",
   "lastOpenFiles": [
     "Datamap.canvas",
     "Inschattingen.md",
-    "Plan van Aanpak.md",
     "Kanban.md",
+    "Plan van Aanpak.md",
     "Project analyse.md",
+    "Briefing/202511_Test VDAB.pdf",
     "Plan van aanpak.md",
     "Untitled",
     "Components/Map.md",
@@ -207,7 +212,6 @@
     "Components/Level Selectie.md",
     "Components/Level optie.md",
     "Components/Job Selectie.md",
-    "Briefing/202511_Test VDAB.pdf",
     "Other",
     "Utils",
     "_Templates",
