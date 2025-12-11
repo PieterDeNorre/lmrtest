@@ -97,7 +97,7 @@ This project includes an Obsidian vault for project documentation and task manag
 3. **Install Required Plugins**
    - In Obsidian, go to Settings → Community plugins
    - Turn on "Community plugins" if not already enabled
-   - Browse community plugins, install ans enable the following:
+   - Browse community plugins, install and enable the following:
      - **Dataview**: Search for "Dataview", install and enable for data queries and calculations
        - After installation, go to Dataview settings and enable "Enable DataviewJS" for advanced queries
      - **Kanban**: Search for "Kanban", install and enable for project task management
