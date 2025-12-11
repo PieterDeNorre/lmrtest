@@ -11,14 +11,17 @@
             "id": "1e383f64cd50f8d9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Project Samenvatting.md",
-                "mode": "preview",
-                "source": false
+                "file": "Datamap.canvas",
+                "viewState": {
+                  "x": 1641.8056415263536,
+                  "y": -250.94699204051994,
+                  "zoom": -0.3188639322916666
+                }
               },
-              "icon": "lucide-file",
-              "title": "Project Samenvatting"
+              "icon": "lucide-layout-dashboard",
+              "title": "Datamap"
             }
           }
         ]
@@ -53,7 +56,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "overvie",
+                "query": "beroepen",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 270.5
+    "width": 410.5
   },
   "right": {
     "id": "c9c15c7506c6be8d",
@@ -184,10 +187,15 @@
   },
   "active": "1e383f64cd50f8d9",
   "lastOpenFiles": [
-    "Kanban.md",
     "Inschattingen.md",
+    "Plan van Aanpak.md",
+    "Kanban.md",
+    "Project analyse.md",
     "Datamap.canvas",
-    "Project Samenvatting.md",
+    "Plan van aanpak.md",
+    "Untitled",
+    "Components/Map.md",
+    "Components/Jobs overzicht.md",
     "Components/Job opties.md",
     "Components/Modal wrapper.md",
     "Components/Progress.md",
@@ -205,11 +213,7 @@
     "Components/Job resultaat opties.md",
     "Components/Level Selectie.md",
     "Components/Level optie.md",
-    "Components/Jobs overzicht.md",
     "Components/Job Selectie.md",
-    "Components/Job locaties.md",
-    "Components/Info corner footer.md",
-    "Components/Info corner.md",
     "Briefing/202511_Test VDAB.pdf",
     "Other",
     "Utils",
@@ -218,7 +222,6 @@
     "Views",
     "Context/Untitled",
     "Briefing/202511_Test VDAB_screens.pdf",
-    "Briefing/202511_Test VDAB_all.pdf",
-    "Context"
+    "Briefing/202511_Test VDAB_all.pdf"
   ]
 }

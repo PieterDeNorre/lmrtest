@@ -37,11 +37,6 @@
 		{"id":"6e83d36c4874b2f7","type":"text","text":"[[Avatar]]","x":865,"y":455,"width":250,"height":50,"color":"4"},
 		{"id":"96b83984cb45d669","type":"text","text":"[[Info corner footer]] controls","x":865,"y":540,"width":250,"height":50,"color":"5"},
 		{"id":"304141f406829e87","type":"text","text":"[[Timer]]","x":865,"y":620,"width":250,"height":50,"color":"5"},
-		{"id":"406d3758c176faa9","type":"text","text":"[[Tijd controle]]","x":-119,"y":-640,"width":250,"height":50,"color":"1"},
-		{"id":"142231fe192df54e","type":"text","text":"Utils","x":-500,"y":-640,"width":250,"height":50,"color":"1"},
-		{"id":"0ec3eec3c2b129f2","type":"text","text":"[[Tegel spel utils]]","x":-119,"y":-480,"width":250,"height":50,"color":"1"},
-		{"id":"62d91f27be579dc0","type":"text","text":"[[Meerkeuze vragen utils]]","x":-119,"y":-560,"width":250,"height":50,"color":"1"},
-		{"id":"c67facde1ef4923e","type":"text","text":"[[Reactie spel utils]]","x":-119,"y":-400,"width":250,"height":50,"color":"1"},
 		{"id":"4ac97f7004ef56c7","type":"text","text":"Results","x":1741,"y":-220,"width":250,"height":50,"color":"5"},
 		{"id":"b2daa65682cfda96","type":"text","text":"[[Job opties]]  modal","x":1900,"y":320,"width":250,"height":50,"color":"5"},
 		{"id":"353307ca7272ace3","type":"text","text":"... ","x":-119,"y":700,"width":250,"height":50,"color":"6"},
@@ -49,7 +44,12 @@
 		{"id":"a314eeddb3bbf3b0","type":"text","text":"[[Tegel spel]]","x":1380,"y":-270,"width":250,"height":50,"color":"5"},
 		{"id":"b10ed44b8ce75024","type":"text","text":"[[Reactie vragen]]","x":1380,"y":-170,"width":250,"height":50,"color":"5"},
 		{"id":"71c04ad0776cde86","type":"text","text":"... ?","x":1380,"y":-82,"width":250,"height":50,"color":"5"},
-		{"id":"33526aa0a0af1ede","type":"text","text":"Welkom","x":280,"y":-220,"width":250,"height":50,"color":"5"}
+		{"id":"33526aa0a0af1ede","type":"text","text":"Welkom","x":280,"y":-220,"width":250,"height":50,"color":"5"},
+		{"id":"406d3758c176faa9","type":"text","text":"[[Tijd controle]]","x":1741,"y":-602,"width":250,"height":50,"color":"1"},
+		{"id":"62d91f27be579dc0","type":"text","text":"[[Meerkeuze vragen utils]]","x":1741,"y":-522,"width":250,"height":50,"color":"1"},
+		{"id":"0ec3eec3c2b129f2","type":"text","text":"[[Tegel spel utils]]","x":1741,"y":-442,"width":250,"height":50,"color":"1"},
+		{"id":"c67facde1ef4923e","type":"text","text":"[[Reactie spel utils]]","x":1741,"y":-362,"width":250,"height":50,"color":"1"},
+		{"id":"142231fe192df54e","type":"text","text":"Utils","x":1380,"y":-602,"width":250,"height":50,"color":"1"}
 	],
 	"edges":[
 		{"id":"aff444142ed67915","fromNode":"68440895f80b2023","fromSide":"right","toNode":"6058b3445b4c819b","toSide":"left"},

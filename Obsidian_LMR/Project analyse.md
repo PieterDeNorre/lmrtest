@@ -5,7 +5,7 @@ tags:
 created: 2025-12-11
 ---
 
-# LMR Test - Interactieve Beroepenkeuze Quiz Applicatie
+# LMR Test - Interactieve Beroepskeuze Quiz Applicatie
 
 ## Hoofdfunctionaliteit
 
@@ -41,11 +41,11 @@ De LMR Test is een **interactieve quiz-applicatie** die jongeren helpt bij het o
 
 ### 3. Multiple Choice Quiz
 
-**Component**: [[Multiple Choice]]
+**Component**: [[Multiple Choice]], [[Tegel spel]], [[Reactie vragen]]
 
 - **Functie**: Hoofdquiz met verschillende vraagtypen
 - **Sub-componenten**:
-  - [[Question Container]]: Behandelt individuele vragen
+  - [[Question Container]]: Behandelt individuele vragen, en kiest het correcte vragen type
   - [[Info Corner]]: Toont spelinformatie, timer, avatar en voortgang
 - **Vraagtypen**: Meerkeuze vragen met score berekening
 
@@ -55,7 +55,7 @@ Componenten:
 - [[Job opties]]
 - [[Spel overzicht]]
 - [[Diploma]]
-- [[]]
+- [[Jobs overzicht]]
 
 ## 🧩 Kern Componenten
 
@@ -153,7 +153,7 @@ De applicatie ondersteunt verschillende vraagtypen:
 
 ## 🏗️ Architectuur
 
-De applicatie combineert moderne web technologieën met doordachte UX design om een engaging en educatieve ervaring te creëren voor beroepsorientatie. Elke component is modulair opgezet met duidelijke separation of concerns tussen UI, state management en business logic.
+De applicatie combineert moderne web technologieën met doordachte UX design om een engaging en educatieve ervaring te creëren voor beroepsoriëntatie. Elke component is modulair opgezet met duidelijke separation of concerns tussen UI, state management en business logic.
 
 ---
 
