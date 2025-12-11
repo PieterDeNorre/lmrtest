@@ -14,8 +14,8 @@ export { default as LevelSelection } from "./levelSelection/levelSelection";
 export { default as LevelOption } from "./levelSelection/levelOption";
 
 // Job Selection Exports
-export { default as JobSelection } from "./jobSelection/jobSelection";
-export { default as JobLocations } from "./jobSelection/jobLocations";
+export { default as JobSelection } from "./JobSelection/jobSelection";
+export { default as JobLocations } from "./JobSelection/jobLocations";
 
 // Multiple Choice Exports
 export { default as MultipleChoice } from "./multipleChoice/multipleChoice";
