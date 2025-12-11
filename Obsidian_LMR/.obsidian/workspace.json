@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e89d2f2af5268b7f",
+        "id": "418331d54121a307",
         "type": "tabs",
         "children": [
           {
-            "id": "ac96d5136291da01",
+            "id": "b0cf5b9157c3a1f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Context/Question Context.md",
+                "file": "Project Samenvatting.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Question Context"
+              "title": "Project Samenvatting"
             }
           }
         ]
@@ -182,11 +182,16 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "ac96d5136291da01",
+  "active": "b0cf5b9157c3a1f5",
   "lastOpenFiles": [
-    "Datamap.canvas",
+    "Analyse.md",
+    "Components/IconsProvider.md",
+    "Project Samenvatting.md",
+    "Untitled.md",
     "Kanban.md",
-    "Overzicht.md",
+    "Datamap.canvas",
+    "Context/Quiz Context.md",
+    "Context/Question Context.md",
     "Components/Map.md",
     "Other/Functionele analyse en testing.md",
     "Datamodel.md",
@@ -206,10 +211,6 @@
     "Utils/Tijd controle.md",
     "Utils/Tegel spel utils.md",
     "Utils/Reactie spel utils.md",
-    "Utils/Meerkeuze vragen utils.md",
-    "Views/Grid.md",
-    "Views/Job locatie.md",
-    "Views/Level selecteren.md",
     "Briefing/202511_Test VDAB.pdf",
     "Other",
     "Utils",

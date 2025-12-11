@@ -10,7 +10,6 @@
 	- Framer motion (animaties)
 	- knip (Cleanproject)
 
-###### D) Team bepalen aan de hand van expertise en beschikbaarheid
 
 ## Bedenkingen / vragen
 
