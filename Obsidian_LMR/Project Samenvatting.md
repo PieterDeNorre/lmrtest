@@ -51,11 +51,11 @@ De LMR Test is een **interactieve quiz-applicatie** die jongeren helpt bij het o
 
 ### 4. Resultaten Overzicht
 
-**Component**: [[Overview]]
-
-- **Functie**: Toont quiz resultaten per beroepsgebied
-- **Sub-componenten**: Grid met resultaat items, progress bars, scores
-- **Feedback**: Percentage scores en aanbevelingen per beroep
+Componenten: 
+- [[Job opties]]
+- [[Spel overzicht]]
+- [[Diploma]]
+- [[]]
 
 ## 🧩 Kern Componenten
 
@@ -67,6 +67,7 @@ De LMR Test is een **interactieve quiz-applicatie** die jongeren helpt bij het o
 - [[Timer]]: Tijd beheer component
 - [[Avatar]]: Gebruiker representatie
 - [[IconsProvider]]: Icon management systeem
+- [[Info corner]]: Klankbord voor gebruiker
 
 ### Context Management
 
@@ -75,6 +76,7 @@ De LMR Test is een **interactieve quiz-applicatie** die jongeren helpt bij het o
   - Quiz stappen en navigatie
   - Level selectie
   - Resultaten opslag
+  
 - **QuestionsContext**:
   - Vragen beheer en navigatie
   - Antwoorden opslag
@@ -117,11 +119,29 @@ De LMR Test is een **interactieve quiz-applicatie** die jongeren helpt bij het o
 ## 📊 Component Overzicht
 
 ```dataview
-TABLE Estimation AS "Inschatting (h)"
-FROM "Components"
+TABLE FROM "Components"
 SORT file.name ASC
 ```
 
+## 📊 Views Overzicht
+
+```dataview
+TABLE FROM "Views"
+SORT file.name ASC
+```
+## 📊 Contexts Overzicht
+
+```dataview
+TABLE FROM "Context"
+SORT file.name ASC
+```
+
+## 📊 Utils Overzicht
+
+```dataview
+TABLE FROM "Utils"
+SORT file.name ASC
+```
 ## 🎮 Quiz Types
 
 De applicatie ondersteunt verschillende vraagtypen:
@@ -129,6 +149,7 @@ De applicatie ondersteunt verschillende vraagtypen:
 - [[Meerkeuze vragen]]: Standaard multiple choice
 - [[Tegel spel]]: Interactieve tegel-gebaseerde vragen
 - [[Reactie vragen]]: Reactie-tijd gebaseerde vragen
+- ... ?
 
 ## 🏗️ Architectuur
 
@@ -136,4 +157,4 @@ De applicatie combineert moderne web technologieën met doordachte UX design om 
 
 ---
 
-_Laatste update: 2025-12-11_
+
