@@ -6,4 +6,4 @@ tags:
 ## Info
 
 Intro van het spel.
-Titel text en lijs ven level opties.
+Titel text en lijst van level opties.

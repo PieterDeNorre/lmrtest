@@ -55,10 +55,15 @@ const classesQuestionContainer = tv({
       },
       false: {},
     },
+    isSelected: {
+      true: {},
+      false: {},
+    },
   },
   compoundVariants: [
     {
       correct: true,
+      isSelected: true,
       validateAnswers: true,
       wrong: false,
       class: {
@@ -68,6 +73,7 @@ const classesQuestionContainer = tv({
     },
     {
       correct: false,
+      isSelected: true,
       validateAnswers: true,
       wrong: false,
       class: {
@@ -137,6 +143,7 @@ const QuestionContainer = ({
                 key={index}
                 className={classes.answer({
                   correct: validateAnswers && isSelected && isCorrectAnswer,
+                  isSelected: isSelected,
                   validateAnswers:
                     validateAnswers && (isSelected || isUntouchedCorrect),
                 })}

@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "0f7632b00cbdff33",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "1e383f64cd50f8d9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Analyse.md",
-                "mode": "preview",
-                "source": false
+                "file": "Datamap.canvas",
+                "viewState": {
+                  "x": 1641.8056415263536,
+                  "y": -250.94699204051994,
+                  "zoom": -0.3188639322916666
+                }
               },
-              "icon": "lucide-file",
-              "title": "Analyse"
+              "icon": "lucide-layout-dashboard",
+              "title": "Datamap"
             }
           }
         ]
@@ -53,7 +56,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:shared",
+                "query": "beroepen",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 254.5
+    "width": 410.5
   },
   "right": {
     "id": "c9c15c7506c6be8d",
@@ -182,44 +185,43 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "704b325c41577b20",
+  "active": "1e383f64cd50f8d9",
   "lastOpenFiles": [
-    "Other",
+    "Inschattingen.md",
+    "Plan van Aanpak.md",
     "Kanban.md",
-    "Analyse.md",
+    "Project analyse.md",
     "Datamap.canvas",
-    "Components/Button.md",
-    "Views/Level selecteren.md",
-    "Views/Grid.md",
-    "Views/Job locatie.md",
-    "Views/Vraagstelling.md",
-    "Utils/Tijd controle.md",
-    "Utils/Tegel spel utils.md",
-    "Utils/Reactie spel utils.md",
-    "Utils/Meerkeuze vragen utils.md",
-    "Components/Level resultaat.md",
-    "Job options.md",
-    "Some Comp.md",
-    "Components/Job opties.md",
-    "Components/Job options.md",
-    "Components/Spel overzicht.md",
-    "Components/Job locaties.md",
-    "Components/Diploma.md",
+    "Plan van aanpak.md",
+    "Untitled",
+    "Components/Map.md",
     "Components/Jobs overzicht.md",
-    "Components/Info corner.md",
-    "Components/Info corner footer.md",
-    "Utils",
+    "Components/Job opties.md",
+    "Components/Modal wrapper.md",
     "Components/Progress.md",
-    "Context/Quiz Context.md",
-    "Context/Question Context.md",
+    "Components/Question container.md",
+    "Components/Reactie vragen.md",
+    "Components/Level option.md",
+    "Overview.md",
+    "Components/IconsProvider.md",
+    "Spel Overzicht.md",
+    "Components/Button.md",
+    "Components/Spel overzicht.md",
+    "Components/Overview.md",
+    "Components/Meerkeuze vragen.md",
+    "Components/Multiple Choice.md",
+    "Components/Job resultaat opties.md",
+    "Components/Level Selectie.md",
+    "Components/Level optie.md",
+    "Components/Job Selectie.md",
+    "Briefing/202511_Test VDAB.pdf",
+    "Other",
+    "Utils",
     "_Templates",
     "Logic",
     "Views",
     "Context/Untitled",
     "Briefing/202511_Test VDAB_screens.pdf",
-    "Briefing/202511_Test VDAB_all.pdf",
-    "Context",
-    "Components",
-    "Briefing/202511_Test VDAB.pdf"
+    "Briefing/202511_Test VDAB_all.pdf"
   ]
 }

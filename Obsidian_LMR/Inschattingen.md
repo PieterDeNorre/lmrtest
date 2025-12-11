@@ -1,13 +1,3 @@
-
-## Bedenkingen
-Is er nood aan:
-- Zijn er nog bijkomende types van vragen/spelletjes
-- interpretaties van scores
-- Caching
-- Tracking
-- Saving data for user to db
-
-## Inschattingen
 ### Contexten
 ```dataview
 TABLE Estimation AS "Inschatting (h)" FROM "Context" SORT file.name ASC
@@ -25,9 +15,15 @@ TABLE Estimation AS "Inschatting (h)" FROM "Views" SORT file.name ASC
 TABLE Estimation AS "Inschatting (h)" FROM "Utils" SORT file.name ASC
 ```
 
-## Totaal
+### Other
+```dataview
+TABLE Estimation AS "Inschatting (h)" FROM "Other" SORT file.name ASC
+```
+
+
+## Totaal Inschattingen
 ```dataviewjs
-const includeFolders = ["Components", "Views", "Utils", "Context"];
+const includeFolders = ["Components", "Views", "Utils", "Context", "Other"];
 
 const pages = dv.pages().where(p => {
   const estimation = p.Estimation;
@@ -62,12 +58,11 @@ const folderTotals = Object.entries(byFolder).map(([folder, estimations]) => [
 ]);
 
 const grandTotal = folderTotals.reduce((sum, [folder, total]) => sum + total, 0);
-
-dv.table(["Folder", "Totaal inschatingen (h)"], 
-  [...folderTotals, ["**Totaal**", `**${grandTotal}**`]]
+const days = grandTotal / 8
+dv.table(["Folder", "Totaal inschattingen (h)"], 
+  [...folderTotals, ["**Totaal uren**", `**${grandTotal}**`], ["**Totaal dagen**", `**${days}**`]]
 );
+
 ```
 
-## Mindmap / Kanban
-[[Datamap.canvas]]
-[[Kanban]]
+
