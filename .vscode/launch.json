@@ -5,17 +5,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
-      "request": "launch",
-      "name": "Chrome launcher",
-      "url": "http://localhost:3000",
-      "webRoot": "/Users/Pieter_De_Norre/Documents/Projects/OMPPortalNext/src",
-      "skipFiles": [
-        "file://Users/Pieter_De_Norre/Documents/Projects/OMPPortalNext/src/node_modules/**/*.js"
-      ],
-      "resolveSourceMapLocations": ["${workspaceFolder}/", "!/node_modules/**"]
-    },
-    {
       "name": "Next.js: debug server-side",
       "type": "node-terminal",
       "request": "launch",
